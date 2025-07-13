@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
 
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center space-x-6">
-            <nav className="flex space-x-6 text-sm font-medium text-besa-dark">
+            <nav className="flex space-x-6 text-sm font-bold text-besa-dark">
               <a href="#home" className="hover:text-besa-blue">Ana Sayfa</a>
               <a href="#projects" className="hover:text-besa-blue">Projeler</a>
               <a href="#about" className="hover:text-besa-blue">Hakkımızda</a>
@@ -63,11 +63,11 @@ export const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-besa-beige py-4">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-besa-dark hover:text-besa-blue font-medium">Ana Sayfa</a>
-              <a href="#projects" className="text-besa-dark hover:text-besa-blue font-medium">Projeler</a>
-              <a href="#about" className="text-besa-dark hover:text-besa-blue font-medium">Hakkımızda</a>
-              <a href="#services" className="text-besa-dark hover:text-besa-blue font-medium">Hizmetler</a>
-              <a href="#contact" className="text-besa-dark hover:text-besa-blue font-medium">İletişim</a>
+              <a href="#home" className="text-besa-dark hover:text-besa-blue font-bold">Ana Sayfa</a>
+              <a href="#projects" className="text-besa-dark hover:text-besa-blue font-bold">Projeler</a>
+              <a href="#about" className="text-besa-dark hover:text-besa-blue font-bold">Hakkımızda</a>
+              <a href="#services" className="text-besa-dark hover:text-besa-blue font-bold">Hizmetler</a>
+              <a href="#contact" className="text-besa-dark hover:text-besa-blue font-bold">İletişim</a>
             </nav>
           </div>
         )}
