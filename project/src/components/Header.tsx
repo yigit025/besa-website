@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, Search } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,12 +8,28 @@ export const Header: React.FC = () => {
     <header className="bg-besa-banner shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+          {/* LOGO */}
           <div className="flex items-center">
             <div className="text-3xl font-bold text-besa-dark">
               <span className="text-4xl sm:text-5xl font-bold text-besa-dark mb-6">BESA</span>
             </div>
           </div>
-          
+
+          {/* DİL ve ARAMA - SADECE MOBİL */}
+          <div className="flex items-center space-x-4 lg:hidden">
+            {/* Arama Butonu */}
+            <button className="text-besa-dark p-2 hover:text-besa-blue transition-all">
+              <Search className="w-5 h-5" />
+            </button>
+
+            {/* Dil Seçici (placeholder, fonksiyonsuz) */}
+            <select className="text-besa-dark text-sm bg-transparent outline-none font-semibold">
+              <option value="tr">TR</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+
+          {/* MENU LINKS - SADECE MASAÜSTÜ */}
           <nav className="hidden lg:flex items-center space-x-8">
             <a href="#home" className="text-besa-dark hover:text-besa-blue font-bold transition-colors">Ana Sayfa</a>
             <a href="#projects" className="text-besa-dark hover:text-besa-blue font-bold transition-colors">Projeler</a>
@@ -21,27 +37,26 @@ export const Header: React.FC = () => {
             <a href="#services" className="text-besa-dark hover:text-besa-blue font-bold transition-colors">Hizmetler</a>
             <a href="#contact" className="text-besa-dark hover:text-besa-blue font-bold transition-colors">İletişim</a>
           </nav>
-          
-          <div className="hidden lg:flex items-center space-x-4">
-  <div className="flex items-center space-x-2 text-sm text-besa-dark/70">
-    <Phone className="w-4 h-4" />
-    <span className="font-semibold">+90 533 016 98 48</span>
-  </div>
-  <div className="flex items-center space-x-2 text-sm text-besa-dark/70">
-    <Mail className="w-4 h-4" />
-    <span className="font-semibold">info@besainsaat.net</span>
-  </div>
-</div>
 
-          
-          <button 
-            className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          {/* İLETİŞİM - SADECE MASAÜSTÜ */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="flex items-center space-x-2 text-sm text-besa-dark/70 font-semibold">
+              <Phone className="w-4 h-4" />
+              <span>+90 533 016 98 48</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-besa-dark/70 font-semibold">
+              <Mail className="w-4 h-4" />
+              <span>info@besainsaat.net</span>
+            </div>
+          </div>
+
+          {/* HAMBURGER MENU */}
+          <button className="lg:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-        
+
+        {/* RESPONSIVE MENÜ - MOBİL */}
         {isMenuOpen && (
           <div className="lg:hidden border-t border-besa-beige py-4">
             <nav className="flex flex-col space-y-4">
