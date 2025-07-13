@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
+import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 
 const projects = [
@@ -158,20 +159,24 @@ export const Projects: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500">
           {visibleProjects.map((project) => {
             const isYeniProje = project.id === 5;
+            const [sliderRef] = useKeenSlider({ loop: true });
             return (
               <div
                 key={project.id}
                 ref={isYeniProje ? yeniProjeRef : null}
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
-                <div className="relative overflow-hidden">
-                  <div className="keen-slider">
+                <div className="relative h-64 overflow-hidden">
+                  <div ref={sliderRef} className="keen-slider h-full">
                     {project.images.map((src, index) => (
-                      <div key={index} className="keen-slider__slide h-64">
+                      <div
+                        key={index}
+                        className="keen-slider__slide flex items-center justify-center"
+                      >
                         <img
                           src={src}
                           alt={`${project.title} - ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-64 object-cover"
                         />
                       </div>
                     ))}
@@ -216,3 +221,4 @@ export const Projects: React.FC = () => {
     </section>
   );
 };
+
