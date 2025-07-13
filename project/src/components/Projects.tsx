@@ -162,7 +162,7 @@ export const Projects: React.FC = () => {
                 ref={isYeniProje ? yeniProjeRef : null}
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-64">
                   <Slider images={project.images} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
