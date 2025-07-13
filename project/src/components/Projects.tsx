@@ -40,21 +40,39 @@ const projects = [
   },
   {
     id: 5,
-    title: "Yeni Proje 1",
-    location: "Menteşe, Muğla",
+    title: "BESA Yasemin Evleri",
+    location: "Dalaman, Muğla",
     image: "https://via.placeholder.com/600x400",
-    units: "16 Daire",
+    units: "12 Daire",
     completion: "2023",
     description: "Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı."
   },
   {
     id: 6,
-    title: "Yeni Proje 2",
-    location: "Ortaca, Muğla",
+    title: "BESA Dinçer Apartmanı",
+    location: "Dalaman, Muğla",
     image: "https://via.placeholder.com/600x400",
-    units: "8 Villa",
+    units: "9 Daire",
+    completion: "2024",
+    description: "Ege esintili mimarisiyle dikkat çeken özel apartman projesi."
+  },
+  {
+    id: 7,
+    title: "BESA Sayan Evleri",
+    location: "Dalaman, Muğla",
+    image: "https://via.placeholder.com/600x400",
+    units: "2 Villa",
+    completion: "2024",
+    description: "Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar."
+  },
+  {
+    id: 8,
+    title: "BESA Design House",
+    location: "Dalaman, Muğla",
+    image: "https://i.ibb.co/M3rXwnD/IMG-7676.jpg",
+    units: "Tek Villa",
     completion: "2025",
-    description: "Ege esintili mimarisiyle dikkat çeken özel villa projesi."
+    description: "Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı."
   },
 ];
 
