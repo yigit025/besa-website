@@ -8,6 +8,7 @@ export default {
         'besa-dark': '#1B3C53',
         'besa-blue': '#456882', 
         'besa-beige': '#D2C1B6',
+        'besa-banner': '#D2C1B6',
         'besa-cream': '#F9F3EF',
       },
       fontFamily: {
