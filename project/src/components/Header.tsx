@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Mail, Search } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 
-export const Header: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
+export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = () => {
-    onSearch(searchQuery);
-  };
 
   return (
     <header className="bg-besa-banner shadow-sm sticky top-0 z-50">
@@ -17,20 +12,6 @@ export const Header: React.FC<{ onSearch: (query: string) => void }> = ({ onSear
             <div className="text-3xl font-bold text-besa-dark">
               <span className="text-4xl sm:text-5xl font-bold text-besa-dark mb-6">BESA</span>
             </div>
-          </div>
-
-          {/* Mobilde gözüken arama kutusu */}
-          <div className="flex lg:hidden items-center gap-2">
-            <input
-              type="text"
-              placeholder="Proje ara..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="text-sm px-3 py-1 rounded-md border border-besa-dark placeholder:text-xs"
-            />
-            <button onClick={handleSearch}>
-              <Search className="w-5 h-5 text-besa-dark" />
-            </button>
           </div>
 
           <button className="lg:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
