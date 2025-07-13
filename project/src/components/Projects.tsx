@@ -42,7 +42,7 @@ const projects = [
     id: 5,
     title: "BESA Yasemin Evleri",
     location: "Dalaman, Muğla",
-    image: "https://via.placeholder.com/600x400",
+    image: "https://i.ibb.co/LhhbvJ3M/IMG-2550.jpg",
     units: "12 Daire",
     completion: "2023",
     description: "Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı."
@@ -51,7 +51,7 @@ const projects = [
     id: 6,
     title: "BESA Dinçer Apartmanı",
     location: "Dalaman, Muğla",
-    image: "https://via.placeholder.com/600x400",
+    image: "https://i.ibb.co/B2mP4trv/IMG-6490.jpg",
     units: "9 Daire",
     completion: "2024",
     description: "Ege esintili mimarisiyle dikkat çeken özel apartman projesi."
@@ -60,7 +60,7 @@ const projects = [
     id: 7,
     title: "BESA Sayan Evleri",
     location: "Dalaman, Muğla",
-    image: "https://via.placeholder.com/600x400",
+    image: "https://i.ibb.co/k2XscVT2/IMG-6515.jpg",
     units: "2 Villa",
     completion: "2024",
     description: "Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar."
