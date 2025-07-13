@@ -10,7 +10,7 @@ const Slider: React.FC<{ images: string[] }> = ({ images }) => {
   });
 
   return (
-    <div ref={sliderRef} className="keen-slider h-64">
+    <div ref={sliderRef} className="keen-slider h-64 bg-red100">
       {images.map((src, index) => (
         <div
           key={index}
