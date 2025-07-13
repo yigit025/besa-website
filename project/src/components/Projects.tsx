@@ -74,6 +74,24 @@ const projects = [
     completion: "2025",
     description: "Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı."
   },
+  {
+    id: 9,
+    title: "BESA Nova Konutları",
+    location: "Dalaman, Muğla",
+    image: "https://i.ibb.co/yctcd18x/Whisk-82adc3c0dc.jpg",
+    units: "36 Daire",
+    completion: "Projede",
+    description: "Modern mimarisi ve peyzajlı ortak alanlarıyla BESA Nova, konforlu yaşamın yeni adresi. Şehirle iç içe ama doğadan kopmayan özel bir site deneyimi sunar."
+  },
+  {
+    id: 10,
+    title: "BESA Valora Apartmanı",
+    location: "Dalaman, Muğla",
+    image: "https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg",
+    units: "16 Daire",
+    completion: "Projede",
+    description: Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor."
+  },
 ];
 
 export const Projects: React.FC = () => {
