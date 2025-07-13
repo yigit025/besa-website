@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
 
 const projects = [
@@ -6,25 +6,25 @@ const projects = [
     id: 1,
     title: "BESA Yıldız Evleri",
     location: "Dalaman, Muğla",
-    image: "https://i.ibb.co/vx57yFzC/yildiz-evleri.png?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    image: "https://i.ibb.co/vx57yFzC/yildiz-evleri.png",
     units: "24 Daire",
-	completion: "2022",	
+    completion: "2022",  
     description: "Panoramik orman manzaralı ve premium olanaklara sahip modern konut kompleksi."
   },
   {
     id: 2,
     title: "BESA Masal Bahçe Evleri",
     location: "Dalaman, Muğla",
-    image: "https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    image: "https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg",
     units: "4 Villa",
-	completion: "2024",
+    completion: "2024",
     description: "Şehrin kalbinde sofistike şehir yaşamı sunan lüks villalar."
   },
   {
     id: 3,
-    title: "BESA KentVadi Evleri ",
+    title: "BESA KentVadi Evleri",
     location: "Ümraniye, İstanbul",
-    image: "https://i.ibb.co/qMkwQQCc/besa-kentevleri.jpg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    image: "https://i.ibb.co/qMkwQQCc/besa-kentevleri.jpg",
     units: "32 Daire",
     completion: "2020",
     description: "Aile yaşamına uygun, sosyal alanlarla çevrili butik bir apartman projesi. Metroya 5 dakika, huzura bir adım."
@@ -33,14 +33,36 @@ const projects = [
     id: 4,
     title: "BESA Residence Olea",
     location: "Dalaman, Muğla",
-    image: "https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    image: "https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg",
     units: "18 Daire",
     completion: "Devam ediyor.",
     description: "BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı."
-  }
+  },
+  {
+    id: 5,
+    title: "Yeni Proje 1",
+    location: "Menteşe, Muğla",
+    image: "https://via.placeholder.com/600x400",
+    units: "16 Daire",
+    completion: "2023",
+    description: "Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı."
+  },
+  {
+    id: 6,
+    title: "Yeni Proje 2",
+    location: "Ortaca, Muğla",
+    image: "https://via.placeholder.com/600x400",
+    units: "8 Villa",
+    completion: "2025",
+    description: "Ege esintili mimarisiyle dikkat çeken özel villa projesi."
+  },
 ];
 
 export const Projects: React.FC = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section id="projects" className="py-20 bg-besa-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,9 +74,9 @@ export const Projects: React.FC = () => {
             BESA’nın yaşam alanları sadece binalar değil; modern hayatın yeniden tasarlanmış hâlidir.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project) => (
+
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500`}>
+          {visibleProjects.map((project) => (
             <div key={project.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
               <div className="relative h-64 overflow-hidden">
                 <img 
@@ -74,7 +96,6 @@ export const Projects: React.FC = () => {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-besa-dark mb-2">{project.title}</h3>
                 <p className="text-besa-dark/70 mb-4">{project.description}</p>
-                
                 <div className="flex items-center justify-between text-sm text-besa-dark/60 mb-4">
                   <div className="flex items-center space-x-2">
                     <Home className="w-4 h-4" />
@@ -85,11 +106,18 @@ export const Projects: React.FC = () => {
                     <span>Teslim: {project.completion}</span>
                   </div>
                 </div>
-                
-                
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-3 bg-besa-dark text-white rounded-full hover:bg-besa-dark/90 transition"
+          >
+            {showAll ? "Daha Azını Göster" : "Daha Fazlasını Gör"}
+          </button>
         </div>
       </div>
     </section>
