@@ -24,7 +24,7 @@ const projects = [
     location: 'Dalaman, Muğla',
     images: [
       'https://i.ibb.co/vx57yFzC/yildiz-evleri.png',
-      'https://via.placeholder.com/600x400?text=Yildiz+Evleri+2'
+      'https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg'
     ],
     units: '24 Daire',
     completion: '2022',
