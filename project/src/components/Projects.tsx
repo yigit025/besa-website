@@ -4,13 +4,23 @@ import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 
 const Slider: React.FC<{ images: string[] }> = ({ images }) => {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({ loop: true });
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    slides: { perView: 1 },
+  });
 
   return (
     <div ref={sliderRef} className="keen-slider h-64">
       {images.map((src, index) => (
-        <div key={index} className="keen-slider__slide">
-          <img src={src} alt={`slide-${index}`} className="w-full h-64 object-cover" />
+        <div
+          key={index}
+          className="keen-slider__slide flex items-center justify-center min-w-full"
+        >
+          <img
+            src={src}
+            alt={`slide-${index}`}
+            className="w-full h-64 object-cover"
+          />
         </div>
       ))}
     </div>
@@ -24,7 +34,7 @@ const projects = [
     location: 'Dalaman, Muğla',
     images: [
       'https://i.ibb.co/vx57yFzC/yildiz-evleri.png',
-      'https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg'
+      'https://via.placeholder.com/600x400?text=Yildiz+Evleri+2'
     ],
     units: '24 Daire',
     completion: '2022',
