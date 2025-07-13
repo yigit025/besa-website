@@ -90,7 +90,7 @@ const projects = [
     image: "https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg",
     units: "16 Daire",
     completion: "Projede",
-    description: Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor."
+    description: "Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor."
   },
 ];
 
@@ -101,16 +101,16 @@ export const Projects: React.FC = () => {
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   const handleToggle = () => {
-    setShowAll(!showAll);
+    setShowAll((prev) => {
+      const next = !prev;
+      if (!prev) {
+        setTimeout(() => {
+          yeniProjeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+      return next;
+    });
   };
-
-  useEffect(() => {
-    if (showAll && yeniProjeRef.current) {
-      setTimeout(() => {
-        yeniProjeRef.current?.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
-    }
-  }, [showAll]);
 
   return (
     <section id="projects" className="py-20 bg-besa-cream">
@@ -124,7 +124,7 @@ export const Projects: React.FC = () => {
           </p>
         </div>
 
-        <div className={grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500">
           {visibleProjects.map((project) => {
             const isYeniProje = project.id === 5;
             return (
