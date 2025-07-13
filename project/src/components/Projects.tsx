@@ -2,27 +2,26 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
 
 const projects = [
-  // ... (10 proje burada)
+  // ... Tüm 10 projen buraya aynı şekilde geliyor
 ];
 
 export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const yeniProjeRef = useRef<HTMLDivElement>(null);
 
-  const visibleProjects = showAll ? projects : projects.slice(0, 4);
-
   const handleToggle = () => {
-    setShowAll(true); // sadece açma işlemi
+    // Eğer açılıyorsa scroll'u çalıştıracak
+    setShowAll((prev) => {
+      const newValue = !prev;
+      if (!prev) {
+        // false → true geçerken scroll yapacak
+        setTimeout(() => {
+          yeniProjeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+      return newValue;
+    });
   };
-
-  useEffect(() => {
-    if (showAll && yeniProjeRef.current) {
-      // Scroll animasyonu için ufak gecikmeyle çalıştır
-      setTimeout(() => {
-        yeniProjeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 300);
-    }
-  }, [showAll]);
 
   return (
     <section id="projects" className="py-20 bg-besa-cream">
@@ -37,7 +36,7 @@ export const Projects: React.FC = () => {
         </div>
 
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500`}>
-          {visibleProjects.map((project) => {
+          {(showAll ? projects : projects.slice(0, 4)).map((project) => {
             const isTarget = project.id === 5;
             return (
               <div
@@ -79,16 +78,14 @@ export const Projects: React.FC = () => {
           })}
         </div>
 
-        {!showAll && (
-          <div className="text-center mt-12">
-            <button
-              onClick={handleToggle}
-              className="px-6 py-3 bg-besa-dark text-white rounded-full hover:bg-besa-dark/90 transition"
-            >
-              Daha Fazlasını Gör
-            </button>
-          </div>
-        )}
+        <div className="text-center mt-12">
+          <button
+            onClick={handleToggle}
+            className="px-6 py-3 bg-besa-dark text-white rounded-full hover:bg-besa-dark/90 transition"
+          >
+            {showAll ? "Daha Azını Göster" : "Daha Fazlasını Gör"}
+          </button>
+        </div>
       </div>
     </section>
   );
