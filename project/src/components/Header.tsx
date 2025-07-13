@@ -16,6 +16,17 @@ export const Header: React.FC = () => {
             </div>
           </div>
 
+          {/* DESKTOP MENU */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <nav className="flex space-x-6 text-sm font-medium text-besa-dark">
+              <a href="#home" className="hover:text-besa-blue">Ana Sayfa</a>
+              <a href="#projects" className="hover:text-besa-blue">Projeler</a>
+              <a href="#about" className="hover:text-besa-blue">Hakkımızda</a>
+              <a href="#services" className="hover:text-besa-blue">Hizmetler</a>
+              <a href="#contact" className="hover:text-besa-blue">İletişim</a>
+            </nav>
+          </div>
+
           {/* SEARCH + LANGUAGE + MENU (mobile) */}
           <div className="flex items-center space-x-4 lg:hidden">
             {/* Search icon */}
@@ -64,4 +75,3 @@ export const Header: React.FC = () => {
     </header>
   );
 };
-
