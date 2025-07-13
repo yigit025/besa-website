@@ -3,6 +3,20 @@ import { MapPin, Home, Calendar } from 'lucide-react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 
+const Slider: React.FC<{ images: string[] }> = ({ images }) => {
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({ loop: true });
+
+  return (
+    <div ref={sliderRef} className="keen-slider h-64">
+      {images.map((src, index) => (
+        <div key={index} className="keen-slider__slide">
+          <img src={src} alt={`slide-${index}`} className="w-full h-64 object-cover" />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const projects = [
   {
     id: 1,
@@ -32,9 +46,7 @@ const projects = [
     id: 3,
     title: 'BESA KentVadi Evleri',
     location: 'Ümraniye, İstanbul',
-    images: [
-      'https://i.ibb.co/qMkwQQCc/besa-kentevleri.jpg'
-    ],
+    images: ['https://i.ibb.co/qMkwQQCc/besa-kentevleri.jpg'],
     units: '32 Daire',
     completion: '2020',
     description: 'Aile yaşamına uygun, sosyal alanlarla çevrili butik bir apartman projesi. Metroya 5 dakika, huzura bir adım.'
@@ -43,9 +55,7 @@ const projects = [
     id: 4,
     title: 'BESA Residence Olea',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg'
-    ],
+    images: ['https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg'],
     units: '18 Daire',
     completion: 'Devam ediyor.',
     description: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.'
@@ -54,9 +64,7 @@ const projects = [
     id: 5,
     title: 'BESA Yasemin Evleri',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/LhhbvJ3M/IMG-2550.jpg'
-    ],
+    images: ['https://i.ibb.co/LhhbvJ3M/IMG-2550.jpg'],
     units: '12 Daire',
     completion: '2023',
     description: 'Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı.'
@@ -65,9 +73,7 @@ const projects = [
     id: 6,
     title: 'BESA Dinçer Apartmanı',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/B2mP4trv/IMG-6490.jpg'
-    ],
+    images: ['https://i.ibb.co/B2mP4trv/IMG-6490.jpg'],
     units: '9 Daire',
     completion: '2024',
     description: 'Ege esintili mimarisiyle dikkat çeken özel apartman projesi.'
@@ -76,9 +82,7 @@ const projects = [
     id: 7,
     title: 'BESA Sayan Evleri',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/k2XscVT2/IMG-6515.jpg'
-    ],
+    images: ['https://i.ibb.co/k2XscVT2/IMG-6515.jpg'],
     units: '2 Villa',
     completion: '2024',
     description: 'Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar.'
@@ -87,9 +91,7 @@ const projects = [
     id: 8,
     title: 'BESA Design House',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/M3rXwnD/IMG-7676.jpg'
-    ],
+    images: ['https://i.ibb.co/M3rXwnD/IMG-7676.jpg'],
     units: 'Tek Villa',
     completion: '2025',
     description: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.'
@@ -98,9 +100,7 @@ const projects = [
     id: 9,
     title: 'BESA Nova Konutları',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/yctcd18x/Whisk-82adc3c0dc.jpg'
-    ],
+    images: ['https://i.ibb.co/yctcd18x/Whisk-82adc3c0dc.jpg'],
     units: '36 Daire',
     completion: 'Projede',
     description: 'Modern mimarisi ve peyzajlı ortak alanlarıyla BESA Nova, konforlu yaşamın yeni adresi. Şehirle iç içe ama doğadan kopmayan özel bir site deneyimi sunar.'
@@ -109,9 +109,7 @@ const projects = [
     id: 10,
     title: 'BESA Valora Apartmanı',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg'
-    ],
+    images: ['https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg'],
     units: '16 Daire',
     completion: 'Projede',
     description: 'Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor.'
@@ -148,8 +146,6 @@ export const Projects: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500">
           {visibleProjects.map((project) => {
             const isYeniProje = project.id === 5;
-            const [sliderRef] = useKeenSlider({ loop: true });
-
             return (
               <div
                 key={project.id}
@@ -157,18 +153,7 @@ export const Projects: React.FC = () => {
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <div ref={sliderRef} className="keen-slider h-full">
-                    {project.images.map((src, index) => (
-                      <div key={index} className="keen-slider__slide">
-                        <img
-                          src={src}
-                          alt={`${project.title} - ${index + 1}`}
-                          className="w-full h-64 object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-
+                  <Slider images={project.images} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <div className="flex items-center space-x-2 text-sm">
@@ -209,4 +194,3 @@ export const Projects: React.FC = () => {
     </section>
   );
 };
-
