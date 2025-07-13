@@ -23,11 +23,11 @@ function App() {
         <Footer />
       </div>
 
-      {/* Sabit Arama ve WhatsApp Butonları */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col sm:flex-row gap-3">
+      {/* Sabit Ortalanmış Arama ve WhatsApp Butonları */}
+      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex flex-row gap-4">
         <a
           href="tel:+905330169848"
-          className="bg-besa-blue text-white px-5 py-3 rounded-full shadow-lg hover:bg-besa-dark transition-all duration-300 text-sm font-semibold whitespace-nowrap"
+          className="bg-besa-blue text-white px-5 py-3 rounded-full shadow-lg hover:bg-besa-dark transition-all duration-300 text-sm font-semibold"
         >
           📞 Bizi Arayın
         </a>
@@ -36,7 +36,7 @@ function App() {
           href="https://wa.me/905330169848"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 text-sm font-semibold whitespace-nowrap"
+          className="bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 text-sm font-semibold"
         >
           💬 WhatsApp'tan Yaz
         </a>
