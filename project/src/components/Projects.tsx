@@ -60,7 +60,7 @@ const projects = [
 
 export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
-  const moreProjectsRef = useRef<HTMLDivElement>(null);
+  const yeniProjeRef = useRef<HTMLDivElement>(null);
 
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
@@ -69,10 +69,10 @@ export const Projects: React.FC = () => {
   };
 
   useEffect(() => {
-    if (showAll && moreProjectsRef.current) {
+    if (showAll && yeniProjeRef.current) {
       setTimeout(() => {
-        moreProjectsRef.current?.scrollIntoView({ behavior: 'smooth' });
-      }, 300); // animasyon otursun diye hafif gecikme
+        yeniProjeRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
     }
   }, [showAll]);
 
@@ -89,39 +89,46 @@ export const Projects: React.FC = () => {
         </div>
 
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500`}>
-          {visibleProjects.map((project) => (
-            <div key={project.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center space-x-2 text-sm">
-                    <MapPin className="w-4 h-4" />
-                    <span>{project.location}</span>
+          {visibleProjects.map((project) => {
+            const isYeniProje = project.id === 5;
+            return (
+              <div
+                key={project.id}
+                ref={isYeniProje ? yeniProjeRef : null}
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <div className="flex items-center space-x-2 text-sm">
+                      <MapPin className="w-4 h-4" />
+                      <span>{project.location}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-besa-dark mb-2">{project.title}</h3>
+                  <p className="text-besa-dark/70 mb-4">{project.description}</p>
+                  <div className="flex items-center justify-between text-sm text-besa-dark/60 mb-4">
+                    <div className="flex items-center space-x-2">
+                      <Home className="w-4 h-4" />
+                      <span>{project.units}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>Teslim: {project.completion}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-besa-dark mb-2">{project.title}</h3>
-                <p className="text-besa-dark/70 mb-4">{project.description}</p>
-                <div className="flex items-center justify-between text-sm text-besa-dark/60 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <Home className="w-4 h-4" />
-                    <span>{project.units}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="w-4 h-4" />
-                    <span>Teslim: {project.completion}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">
@@ -131,7 +138,6 @@ export const Projects: React.FC = () => {
           >
             {showAll ? "Daha Azını Göster" : "Daha Fazlasını Gör"}
           </button>
-          <div ref={moreProjectsRef}></div>
         </div>
       </div>
     </section>
