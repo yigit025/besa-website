@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
 
 const projects = [
@@ -60,8 +60,21 @@ const projects = [
 
 export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
+  const moreProjectsRef = useRef<HTMLDivElement>(null);
 
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
+
+  const handleToggle = () => {
+    setShowAll(!showAll);
+  };
+
+  useEffect(() => {
+    if (showAll && moreProjectsRef.current) {
+      setTimeout(() => {
+        moreProjectsRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 300); // animasyon otursun diye hafif gecikme
+    }
+  }, [showAll]);
 
   return (
     <section id="projects" className="py-20 bg-besa-cream">
@@ -113,11 +126,12 @@ export const Projects: React.FC = () => {
 
         <div className="text-center mt-12">
           <button
-            onClick={() => setShowAll(!showAll)}
+            onClick={handleToggle}
             className="px-6 py-3 bg-besa-dark text-white rounded-full hover:bg-besa-dark/90 transition"
           >
             {showAll ? "Daha Azını Göster" : "Daha Fazlasını Gör"}
           </button>
+          <div ref={moreProjectsRef}></div>
         </div>
       </div>
     </section>
