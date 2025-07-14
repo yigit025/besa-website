@@ -21,10 +21,10 @@ function App() {
       <Hero />
       <Projects />
 
-      {/* ✅ DirectoryGrid entegre edildi */}
-      <section id="directory">
+      
+      
         <DirectoryGrid />
-      </section>
+      
 
       <About />
       <Services />
