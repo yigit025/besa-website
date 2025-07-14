@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
           {/* LOGO */}
           <div className="flex items-center">
             <div className="text-3xl font-bold text-besa-dark">
-              <span className="text-4xl sm:text-5xl font-bold text-besa-dark mb-6">BESA</span>
+              <span className="text-4xl sm:text-5xl font-black text-besa-dark mb-6">BESA</span>
             </div>
           </div>
 
