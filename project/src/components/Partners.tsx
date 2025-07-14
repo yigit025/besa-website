@@ -1,6 +1,6 @@
 import React from 'react';
 
-const partners = [
+const partnersData = [
   {
     logo: "/images/partner-vercel.png",
     name: "Vercel",
@@ -25,7 +25,7 @@ const partners = [
 
 export const Partners: React.FC = () => {
   return (
-    <section id="Partners" className="py-20 bg-besa-beige/30">
+    <section id="partners" className="py-20 bg-besa-beige/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-besa-dark mb-4">
@@ -37,7 +37,7 @@ export const Partners: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {partners.map((partner, index) => (
+          {partnersData.map((partner, index) => (
             <div
               key={index}
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center group"
