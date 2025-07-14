@@ -5,7 +5,7 @@ import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Services } from './components/Services';
-import { Adverd } from './components/Adverd';
+import { Partners } from './components/Partners';
 import { Contact } from './components/Contact';
 import { Features } from './components/Features';
 import { Footer } from './components/Footer';
@@ -22,7 +22,7 @@ function App() {
       <Projects />
       <About />
       <Services />
-      <Adverd />
+      <Partners />
       <Contact />
       <Footer />
       <ScrollToTop />
