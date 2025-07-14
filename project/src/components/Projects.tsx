@@ -1,28 +1,41 @@
 import React, { useState, useRef } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
-import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
 
+// ✔️ Yeni Slider Component - butonlu geçişli
 const Slider: React.FC<{ images: string[] }> = ({ images }) => {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    slides: { perView: 1 },
-  });
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   return (
-    <div ref={sliderRef} className="keen-slider h-64 bg-red100">
-      {images.map((src, index) => (
-        <div
-          key={index}
-          className="keen-slider__slide flex items-center justify-center min-w-full"
-        >
-          <img
-            src={src}
-            alt={`slide-${index}`}
-            className="w-full h-64 object-cover"
-          />
-        </div>
-      ))}
+    <div className="relative h-64 bg-gray-100 overflow-hidden">
+      <img
+        src={images[currentIndex]}
+        alt={`slide-${currentIndex}`}
+        className="w-full h-64 object-cover transition-all duration-300"
+      />
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={handlePrev}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70"
+          >
+            ‹
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70"
+          >
+            ›
+          </button>
+        </>
+      )}
     </div>
   );
 };
