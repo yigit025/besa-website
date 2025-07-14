@@ -24,12 +24,13 @@ const ScrollToTop: React.FC = () => {
   return (
     visible && (
       <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-besa-blue text-white shadow-lg hover:bg-besa-dark transition duration-300"
-        aria-label="Yukarı çık"
+          onClick={scrollToTop}
+              className="fixed bottom-6 md:bottom-6 sm:bottom-20 right-6 z-50 p-3 rounded-full bg-besa-blue text-white shadow-lg hover:bg-besa-dark transition duration-300"
+                aria-label="Yukarı çık"
       >
-        <ArrowUp className="w-5 h-5" />
-      </button>
+          <ArrowUp className="w-5 h-5" />
+</button>
+
     )
   );
 };
