@@ -22,13 +22,13 @@ export const HeroVideo: React.FC = () => {
       {/* Text Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          SİZ EN İYİSİNE
+          BESA
           <br />
-          <span className="text-besa-beige">LAYIKSINIZ</span>
+          <span className="text-besa-beige"></span>
         </h1>
 
         <p className="text-xl sm:text-2xl mb-8 max-w-3xl mx-auto font-light leading-relaxed">
-          BESA ile modern mimari çizgilerde tasarlanmış, konforlu ve prestijli yaşam alanlarını keşfedin.
+          
         </p>
       </div>
 
