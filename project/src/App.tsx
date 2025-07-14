@@ -20,6 +20,7 @@ function App() {
       <Projects />
       <About />
       <Services />
+      <HeroVideo />
       <Contact />
       <Footer />
 
