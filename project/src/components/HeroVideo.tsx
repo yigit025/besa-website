@@ -9,7 +9,7 @@ export const HeroVideo: React.FC = () => {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/hero-video.mp4" // 📌 Videonun yolunu burada ayarla
+        src="/videos/video.mp4" // 📌 Videonun yolunu burada ayarla
         autoPlay
         muted
         loop
