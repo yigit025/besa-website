@@ -21,10 +21,9 @@ function App() {
       <Hero />
       <Projects />
 
-      
-      
-        <DirectoryGrid />
-      
+      <section id="directory" style={{ border: '2px solid red', minHeight: '300px' }}>
+      <DirectoryGrid />
+      </section>
 
       <About />
       <Services />
