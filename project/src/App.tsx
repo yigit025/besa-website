@@ -10,6 +10,7 @@ import { Features } from './components/Features';
 import { Footer } from './components/Footer';
 import { Phone, MessageCircle } from 'lucide-react';
 import ScrollToTop from './components/ScrollToTop';
+import { DirectoryGrid } from './components/DirectoryGrid'; // ✅ Yeni bileşeni ekledik
 
 function App() {
   useTheme();
@@ -19,6 +20,12 @@ function App() {
       <Header />
       <Hero />
       <Projects />
+
+      {/* ✅ DirectoryGrid entegre edildi */}
+      <section id="directory">
+        <DirectoryGrid />
+      </section>
+
       <About />
       <Services />
       <Contact />
@@ -79,4 +86,3 @@ function App() {
 }
 
 export default App;
-
