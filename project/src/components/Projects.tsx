@@ -94,7 +94,9 @@ const projects = [
       'https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg',
       'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
       'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
-      'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg'
+      'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg',
+      'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
+      'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
     ],
     units: '18 Daire',
     completion: 'Devam ediyor.',
