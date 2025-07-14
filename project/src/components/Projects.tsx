@@ -76,7 +76,12 @@ const projects = [
     id: 3,
     title: 'BESA KentVadi Evleri',
     location: 'Ümraniye, İstanbul',
-    images: ['https://i.ibb.co/qMkwQQCc/besa-kentevleri.jpg'],
+    images: [
+      'https://i.ibb.co/qMkwQQCc/besa-kentevleri.jpg',
+      'https://i.ibb.co/Kj49MT0n/Whisk-16fa306fcf.jpg',
+      'https://i.ibb.co/Q36CDGxQ/Whisk-1aeb275275.jpg',
+      'https://i.ibb.co/fYYW81FV/Whisk-df347d0863.jpg'
+            ],
     units: '32 Daire',
     completion: '2020',
     description: 'Aile yaşamına uygun, sosyal alanlarla çevrili butik bir apartman projesi. Metroya 5 dakika, huzura bir adım.'
@@ -85,7 +90,12 @@ const projects = [
     id: 4,
     title: 'BESA Residence Olea',
     location: 'Dalaman, Muğla',
-    images: ['https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg'],
+    images: [
+      'https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg',
+      'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
+      'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
+      'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg'
+    ],
     units: '18 Daire',
     completion: 'Devam ediyor.',
     description: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.'
@@ -94,7 +104,12 @@ const projects = [
     id: 5,
     title: 'BESA Yasemin Evleri',
     location: 'Dalaman, Muğla',
-    images: ['https://i.ibb.co/LhhbvJ3M/IMG-2550.jpg'],
+    images: [
+      'https://i.ibb.co/LhhbvJ3M/IMG-2550.jpg',
+      'https://i.ibb.co/1t7Cbv2S/Whisk-b0502debd1.jpg',
+      'https://i.ibb.co/8LDDMDWy/Whisk-ccef90cccb.jpg',
+      'https://i.ibb.co/LhbVnTrz/Whisk-399d4b76a6.jpg'
+    ],
     units: '12 Daire',
     completion: '2023',
     description: 'Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı.'
@@ -103,7 +118,12 @@ const projects = [
     id: 6,
     title: 'BESA Dinçer Apartmanı',
     location: 'Dalaman, Muğla',
-    images: ['https://i.ibb.co/B2mP4trv/IMG-6490.jpg'],
+    images: [
+      'https://i.ibb.co/B2mP4trv/IMG-6490.jpg',
+      'https://i.ibb.co/GvCmMgMD/IMG-6494.jpg',
+      'https://i.ibb.co/ynXpWt06/IMG-6498.jpg',
+      'https://i.ibb.co/3YCTk8Dw/IMG-6493.jpg'
+    ],
     units: '9 Daire',
     completion: '2024',
     description: 'Ege esintili mimarisiyle dikkat çeken özel apartman projesi.'
@@ -112,7 +132,13 @@ const projects = [
     id: 7,
     title: 'BESA Sayan Evleri',
     location: 'Dalaman, Muğla',
-    images: ['https://i.ibb.co/k2XscVT2/IMG-6515.jpg'],
+    images: [
+      'https://i.ibb.co/QF2kNfnf/66695631-a973-43fb-81c1-4e7ad3b2.jpg',
+      'https://i.ibb.co/XxGG8TT0/ba96aa04-0896-4ad3-91c9-57cc317b.jpg',
+      'https://i.ibb.co/v4wCN2QQ/e51ad1e9-fa2d-44fb-b7fd-4fa79072.jpg',
+      'https://i.ibb.co/WWds9BQX/545a7e7e-64c1-4c54-881a-2a2c75f1.jpg',
+      'https://i.ibb.co/8LRWjrF4/7cabf5b9-f51a-443d-a10c-9da349c2.jpg'
+    ],
     units: '2 Villa',
     completion: '2024',
     description: 'Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar.'
@@ -121,7 +147,11 @@ const projects = [
     id: 8,
     title: 'BESA Design House',
     location: 'Dalaman, Muğla',
-    images: ['https://i.ibb.co/M3rXwnD/IMG-7676.jpg'],
+    images: [
+      'https://i.ibb.co/M3rXwnD/IMG-7676.jpg',
+      'https://i.ibb.co/YFP1wwtT/IMG-1233.jpg',
+      'https://i.ibb.co/Tx4q5Xfy/IMG-1234.jpg'
+    ],
     units: 'Tek Villa',
     completion: '2025',
     description: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.'
@@ -130,7 +160,11 @@ const projects = [
     id: 9,
     title: 'BESA Nova Konutları',
     location: 'Dalaman, Muğla',
-    images: ['https://i.ibb.co/yctcd18x/Whisk-82adc3c0dc.jpg'],
+    images: [
+      'https://i.ibb.co/yctcd18x/Whisk-82adc3c0dc.jpg',
+      'https://i.ibb.co/LzvzZqYR/Whisk-54c5ac9b5f.jpg',
+      'https://i.ibb.co/wFBwwgQH/Whisk-9c92c50bc1.jpg'
+    ],
     units: '36 Daire',
     completion: 'Projede',
     description: 'Modern mimarisi ve peyzajlı ortak alanlarıyla BESA Nova, konforlu yaşamın yeni adresi. Şehirle iç içe ama doğadan kopmayan özel bir site deneyimi sunar.'
@@ -139,7 +173,10 @@ const projects = [
     id: 10,
     title: 'BESA Valora Apartmanı',
     location: 'Dalaman, Muğla',
-    images: ['https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg'],
+    images: [
+      'https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg',
+      'https://i.ibb.co/xt94Hyqm/Whisk-4c4078ea15.jpg'
+    ],
     units: '16 Daire',
     completion: 'Projede',
     description: 'Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor.'
