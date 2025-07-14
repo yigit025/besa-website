@@ -7,6 +7,7 @@ import { About } from './components/About';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Features } from './components/Features';
 import { Phone, MessageCircle } from 'lucide-react';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -22,6 +23,7 @@ function App() {
       <Services />
       <Contact />
       <Footer />
+      <Features />
       <ScrollToTop />
 
       {/* Sabit Butonlar – Responsive */}
