@@ -1,36 +1,39 @@
 import React, { useState, useRef } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
 
-// ✔️ Yeni Slider Component - butonlu geçişli
 const Slider: React.FC<{ images: string[] }> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handlePrev = () => {
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
-  const handleNext = () => {
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <div className="relative h-64 bg-gray-100 overflow-hidden">
       <img
+        key={currentIndex}
         src={images[currentIndex]}
         alt={`slide-${currentIndex}`}
-        className="w-full h-64 object-cover transition-all duration-300"
+        className="w-full h-64 object-cover transition-all duration-300 ease-in-out"
       />
+
       {images.length > 1 && (
         <>
           <button
             onClick={handlePrev}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 z-10"
           >
             ‹
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 z-10"
           >
             ›
           </button>
