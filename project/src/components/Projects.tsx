@@ -64,7 +64,9 @@ const projects = [
     location: 'Dalaman, Muğla',
     images: [
       'https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg',
-      'https://via.placeholder.com/600x400?text=Masal+Bahce+2'
+      'https://i.ibb.co/svjFLqZP/IMG-6633.jpg',
+      'https://i.ibb.co/Gfjpcf99/IMG-6644.jpg',
+      'https://i.ibb.co/XZKCGkX9/IMG-6632.jpg'
     ],
     units: '4 Villa',
     completion: '2024',
