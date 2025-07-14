@@ -8,6 +8,7 @@ import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Phone, MessageCircle } from 'lucide-react';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   useTheme();
@@ -21,6 +22,7 @@ function App() {
       <Services />
       <Contact />
       <Footer />
+      <ScrollToTop />
 
       {/* Sabit Butonlar – Responsive */}
       <div className="fixed z-50">
