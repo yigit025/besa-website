@@ -8,7 +8,6 @@ import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { Features } from './components/Features';
 import { Footer } from './components/Footer';
-import { Features } from './components/Features';
 import { Phone, MessageCircle } from 'lucide-react';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -23,7 +22,6 @@ function App() {
       <About />
       <Services />
       <Contact />
-      <Features />
       <Footer />
       <ScrollToTop />
 
