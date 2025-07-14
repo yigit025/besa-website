@@ -4,6 +4,14 @@ import { Menu, X, Phone, Mail, Search } from 'lucide-react';
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleSmoothScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false); // mobil menüyü kapat
+    }
+  };
+
   return (
     <header className="bg-besa-banner shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,11 +27,11 @@ export const Header: React.FC = () => {
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center space-x-6">
             <nav className="flex space-x-6 text-sm font-bold text-besa-dark">
-              <a href="#home" className="hover:text-besa-blue">Ana Sayfa</a>
-              <a href="#projects" className="hover:text-besa-blue">Projeler</a>
-              <a href="#about" className="hover:text-besa-blue">Hakkımızda</a>
-              <a href="#services" className="hover:text-besa-blue">Hizmetler</a>
-              <a href="#contact" className="hover:text-besa-blue">İletişim</a>
+              <button onClick={() => handleSmoothScroll('home')} className="hover:text-besa-blue">Ana Sayfa</button>
+              <button onClick={() => handleSmoothScroll('projects')} className="hover:text-besa-blue">Projeler</button>
+              <button onClick={() => handleSmoothScroll('about')} className="hover:text-besa-blue">Hakkımızda</button>
+              <button onClick={() => handleSmoothScroll('services')} className="hover:text-besa-blue">Hizmetler</button>
+              <button onClick={() => handleSmoothScroll('contact')} className="hover:text-besa-blue">İletişim</button>
             </nav>
           </div>
 
@@ -63,11 +71,11 @@ export const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-besa-beige py-4">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-besa-dark hover:text-besa-blue font-bold">Ana Sayfa</a>
-              <a href="#projects" className="text-besa-dark hover:text-besa-blue font-bold">Projeler</a>
-              <a href="#about" className="text-besa-dark hover:text-besa-blue font-bold">Hakkımızda</a>
-              <a href="#services" className="text-besa-dark hover:text-besa-blue font-bold">Hizmetler</a>
-              <a href="#contact" className="text-besa-dark hover:text-besa-blue font-bold">İletişim</a>
+              <button onClick={() => handleSmoothScroll('home')} className="text-besa-dark hover:text-besa-blue font-bold">Ana Sayfa</button>
+              <button onClick={() => handleSmoothScroll('projects')} className="text-besa-dark hover:text-besa-blue font-bold">Projeler</button>
+              <button onClick={() => handleSmoothScroll('about')} className="text-besa-dark hover:text-besa-blue font-bold">Hakkımızda</button>
+              <button onClick={() => handleSmoothScroll('services')} className="text-besa-dark hover:text-besa-blue font-bold">Hizmetler</button>
+              <button onClick={() => handleSmoothScroll('contact')} className="text-besa-dark hover:text-besa-blue font-bold">İletişim</button>
             </nav>
           </div>
         )}
