@@ -48,7 +48,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-besa-dark mb-1">E-posta</h4>
-                  <p className="text-besa-dark/70">info@besainsaat.net</p>
+                  <p className="text-besa-dark/70">info@besamimarlikinsaat.com</p>
                 </div>
               </div>
               
