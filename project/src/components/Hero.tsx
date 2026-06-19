@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
                 section.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="group bg-besa-blue hover:bg-besa-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center space-x-2"
+            className="group bg-black hover:bg-neutral-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center space-x-2 shadow-lg"
           >
             <span>{t.button}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
