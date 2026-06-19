@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, X, Phone, Mail, Search, Instagram } from 'lucide-react';
+import { Menu, X, Phone, Mail, Instagram } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Header: React.FC = () => {
@@ -64,23 +64,38 @@ export const Header: React.FC = () => {
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center space-x-6">
               <nav className="flex space-x-6 text-sm font-bold text-white">
-                <button onClick={() => handleSmoothScroll('home')} className="hover:text-besa-beige transition-colors">
+                <button
+                  onClick={() => handleSmoothScroll('home')}
+                  className="hover:text-besa-beige transition-colors"
+                >
                   {t.home}
                 </button>
 
-                <button onClick={() => handleSmoothScroll('projects')} className="hover:text-besa-beige transition-colors">
+                <button
+                  onClick={() => handleSmoothScroll('projects')}
+                  className="hover:text-besa-beige transition-colors"
+                >
                   {t.projects}
                 </button>
 
-                <button onClick={() => handleSmoothScroll('about')} className="hover:text-besa-beige transition-colors">
+                <button
+                  onClick={() => handleSmoothScroll('about')}
+                  className="hover:text-besa-beige transition-colors"
+                >
                   {t.about}
                 </button>
 
-                <button onClick={() => handleSmoothScroll('services')} className="hover:text-besa-beige transition-colors">
+                <button
+                  onClick={() => handleSmoothScroll('services')}
+                  className="hover:text-besa-beige transition-colors"
+                >
                   {t.services}
                 </button>
 
-                <button onClick={() => handleSmoothScroll('contact')} className="hover:text-besa-beige transition-colors">
+                <button
+                  onClick={() => handleSmoothScroll('contact')}
+                  className="hover:text-besa-beige transition-colors"
+                >
                   {t.contact}
                 </button>
               </nav>
@@ -88,10 +103,6 @@ export const Header: React.FC = () => {
 
             {/* MOBILE RIGHT SIDE */}
             <div className="flex items-center space-x-4 lg:hidden">
-              <button className="p-1">
-                <Search className="w-5 h-5 text-white" />
-              </button>
-
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => setLanguage('tr')}
