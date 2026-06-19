@@ -1,14 +1,35 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, Mail, Search } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
+
+  const text = {
+    tr: {
+      home: 'Ana Sayfa',
+      projects: 'Projeler',
+      about: 'Hakkımızda',
+      services: 'Hizmetler',
+      contact: 'İletişim'
+    },
+    en: {
+      home: 'Home',
+      projects: 'Projects',
+      about: 'About Us',
+      services: 'Services',
+      contact: 'Contact'
+    }
+  };
+
+  const t = text[language];
 
   const handleSmoothScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false); // mobil menüyü kapat
+      setIsMenuOpen(false);
     }
   };
 
@@ -27,11 +48,11 @@ export const Header: React.FC = () => {
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center space-x-6">
             <nav className="flex space-x-6 text-sm font-bold text-besa-dark">
-              <button onClick={() => handleSmoothScroll('home')} className="hover:text-besa-blue">Ana Sayfa</button>
-              <button onClick={() => handleSmoothScroll('projects')} className="hover:text-besa-blue">Projeler</button>
-              <button onClick={() => handleSmoothScroll('about')} className="hover:text-besa-blue">Hakkımızda</button>
-              <button onClick={() => handleSmoothScroll('services')} className="hover:text-besa-blue">Hizmetler</button>
-              <button onClick={() => handleSmoothScroll('contact')} className="hover:text-besa-blue">İletişim</button>
+              <button onClick={() => handleSmoothScroll('home')} className="hover:text-besa-blue">{t.home}</button>
+              <button onClick={() => handleSmoothScroll('projects')} className="hover:text-besa-blue">{t.projects}</button>
+              <button onClick={() => handleSmoothScroll('about')} className="hover:text-besa-blue">{t.about}</button>
+              <button onClick={() => handleSmoothScroll('services')} className="hover:text-besa-blue">{t.services}</button>
+              <button onClick={() => handleSmoothScroll('contact')} className="hover:text-besa-blue">{t.contact}</button>
             </nav>
           </div>
 
@@ -45,7 +66,12 @@ export const Header: React.FC = () => {
 
             {/* Language buttons mobile */}
             <div className="flex items-center space-x-2">
-              <button className="flex items-center space-x-1 text-xs font-bold text-besa-dark">
+              <button
+                onClick={() => setLanguage('tr')}
+                className={`flex items-center space-x-1 text-xs font-bold text-besa-dark px-2 py-1 rounded-full border border-besa-dark/20 ${
+                  language === 'tr' ? 'bg-besa-dark/10' : ''
+                }`}
+              >
                 <img
                   src="https://flagcdn.com/w20/tr.png"
                   alt="Türkçe"
@@ -54,7 +80,12 @@ export const Header: React.FC = () => {
                 <span>TR</span>
               </button>
 
-              <button className="flex items-center space-x-1 text-xs font-bold text-besa-dark">
+              <button
+                onClick={() => setLanguage('en')}
+                className={`flex items-center space-x-1 text-xs font-bold text-besa-dark px-2 py-1 rounded-full border border-besa-dark/20 ${
+                  language === 'en' ? 'bg-besa-dark/10' : ''
+                }`}
+              >
                 <img
                   src="https://flagcdn.com/w20/gb.png"
                   alt="English"
@@ -87,7 +118,12 @@ export const Header: React.FC = () => {
 
             {/* Language buttons desktop */}
             <div className="flex items-center space-x-2">
-              <button className="flex items-center space-x-1 text-sm font-bold text-besa-dark border border-besa-dark/20 rounded-full px-3 py-1 hover:bg-besa-dark/5 transition">
+              <button
+                onClick={() => setLanguage('tr')}
+                className={`flex items-center space-x-1 text-sm font-bold text-besa-dark border border-besa-dark/20 rounded-full px-3 py-1 hover:bg-besa-dark/5 transition ${
+                  language === 'tr' ? 'bg-besa-dark/10' : ''
+                }`}
+              >
                 <img
                   src="https://flagcdn.com/w20/tr.png"
                   alt="Türkçe"
@@ -96,7 +132,12 @@ export const Header: React.FC = () => {
                 <span>TR</span>
               </button>
 
-              <button className="flex items-center space-x-1 text-sm font-bold text-besa-dark border border-besa-dark/20 rounded-full px-3 py-1 hover:bg-besa-dark/5 transition">
+              <button
+                onClick={() => setLanguage('en')}
+                className={`flex items-center space-x-1 text-sm font-bold text-besa-dark border border-besa-dark/20 rounded-full px-3 py-1 hover:bg-besa-dark/5 transition ${
+                  language === 'en' ? 'bg-besa-dark/10' : ''
+                }`}
+              >
                 <img
                   src="https://flagcdn.com/w20/gb.png"
                   alt="English"
@@ -113,11 +154,11 @@ export const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-besa-beige py-4">
             <nav className="flex flex-col space-y-4">
-              <button onClick={() => handleSmoothScroll('home')} className="text-besa-dark hover:text-besa-blue font-bold">Ana Sayfa</button>
-              <button onClick={() => handleSmoothScroll('projects')} className="text-besa-dark hover:text-besa-blue font-bold">Projeler</button>
-              <button onClick={() => handleSmoothScroll('about')} className="text-besa-dark hover:text-besa-blue font-bold">Hakkımızda</button>
-              <button onClick={() => handleSmoothScroll('services')} className="text-besa-dark hover:text-besa-blue font-bold">Hizmetler</button>
-              <button onClick={() => handleSmoothScroll('contact')} className="text-besa-dark hover:text-besa-blue font-bold">İletişim</button>
+              <button onClick={() => handleSmoothScroll('home')} className="text-besa-dark hover:text-besa-blue font-bold">{t.home}</button>
+              <button onClick={() => handleSmoothScroll('projects')} className="text-besa-dark hover:text-besa-blue font-bold">{t.projects}</button>
+              <button onClick={() => handleSmoothScroll('about')} className="text-besa-dark hover:text-besa-blue font-bold">{t.about}</button>
+              <button onClick={() => handleSmoothScroll('services')} className="text-besa-dark hover:text-besa-blue font-bold">{t.services}</button>
+              <button onClick={() => handleSmoothScroll('contact')} className="text-besa-dark hover:text-besa-blue font-bold">{t.contact}</button>
             </nav>
           </div>
         )}
