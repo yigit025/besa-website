@@ -558,7 +558,7 @@ export const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex w-full items-center justify-center px-5 py-3 bg-besa-blue text-white rounded-full font-semibold hover:bg-besa-dark transition"
                     >
-                      -->Proje Detayları<--
+                      Detaylar için kataloğumuzu inceleyin
                     </a>
                   )}
                 </div>
