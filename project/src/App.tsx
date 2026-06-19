@@ -9,7 +9,6 @@ import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
-import { Features } from './components/Features';
 import { Footer } from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -44,7 +43,6 @@ function App() {
       <About />
       <Services />
       <Contact />
-      <Features />
       <Footer />
 
       {/* Sabit Butonlar – Responsive */}
