@@ -119,10 +119,12 @@ const projects = [
     title: 'BESA Masal Bahçe Evleri',
     location: 'Dalaman, Muğla',
     images: [
-      'https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg',
-      'https://i.ibb.co/svjFLqZP/IMG-6633.jpg',
-      'https://i.ibb.co/Gfjpcf99/IMG-6644.jpg',
-      'https://i.ibb.co/XZKCGkX9/IMG-6632.jpg'
+  'https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg',
+  'https://i.ibb.co/wZM04BSY/95ea4ff6-221b-4898-b431-2ef7bb28e713.jpg',
+  'https://i.ibb.co/svjFLqZP/IMG-6633.jpg',
+  'https://i.ibb.co/Gfjpcf99/IMG-6644.jpg',
+  'https://i.ibb.co/XZKCGkX9/IMG-6632.jpg'
+],
     ],
     units: {
       tr: '4 Villa',
