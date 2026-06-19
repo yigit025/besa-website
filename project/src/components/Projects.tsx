@@ -28,11 +28,6 @@ type LightboxState = {
   title: string;
 };
 
-type CatalogViewerState = {
-  title: string;
-  url: string;
-};
-
 const Slider: React.FC<{
   images: string[];
   onImageClick: (index: number) => void;
@@ -334,7 +329,6 @@ export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
-  const [catalogViewer, setCatalogViewer] = useState<CatalogViewerState | null>(null);
   const yeniProjeRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
 
@@ -410,19 +404,6 @@ export const Projects: React.FC = () => {
     setLightbox(null);
   };
 
-  const openCatalogViewer = (title: string, catalogUrl: string) => {
-    const fullPdfUrl = `${window.location.origin}${catalogUrl}`;
-
-    setCatalogViewer({
-      title,
-      url: `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(fullPdfUrl)}`
-    });
-  };
-
-  const closeCatalogViewer = () => {
-    setCatalogViewer(null);
-  };
-
   const showPrevImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
 
@@ -453,12 +434,11 @@ export const Projects: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (!lightbox) return;
+
       if (event.key === 'Escape') {
         closeLightbox();
-        closeCatalogViewer();
       }
-
-      if (!lightbox) return;
 
       if (event.key === 'ArrowLeft') {
         showPrevImage();
@@ -520,7 +500,7 @@ export const Projects: React.FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500 items-stretch">
           {visibleProjects.map((project, index) => {
             const isFirstHiddenProject = showAll && index === 4;
 
@@ -528,7 +508,7 @@ export const Projects: React.FC = () => {
               <div
                 key={project.id}
                 ref={isFirstHiddenProject ? yeniProjeRef : null}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] h-full flex flex-col"
               >
                 <div className="relative h-64">
                   <Slider
@@ -548,37 +528,41 @@ export const Projects: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-2xl font-bold text-besa-dark mb-2">
                     {project.title}
                   </h3>
 
-                  <p className="text-besa-dark/70 mb-4">
+                  <p className="text-besa-dark/70 mb-6">
                     {project.description[language]}
                   </p>
 
-                  <div className="flex items-center justify-between text-sm text-besa-dark/60 mb-4">
-                    <div className="flex items-center space-x-2">
-                      <Home className="w-4 h-4" />
-                      <span>{project.units[language]}</span>
+                  <div className="mt-auto">
+                    <div className="flex items-center justify-between gap-4 text-sm text-besa-dark/60 mb-6">
+                      <div className="flex items-center space-x-2 shrink-0">
+                        <Home className="w-4 h-4" />
+                        <span>{project.units[language]}</span>
+                      </div>
+
+                      <div className="flex items-center space-x-2 text-right">
+                        <Calendar className="w-4 h-4 shrink-0" />
+                        <span>
+                          {t.completion}: {project.completion[language]}
+                        </span>
+                      </div>
                     </div>
 
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>
-                        {t.completion}: {project.completion[language]}
-                      </span>
-                    </div>
+                    {language === 'tr' && project.catalogUrl && (
+                      <a
+                        href={project.catalogUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-center px-5 py-3 bg-black text-white rounded-full font-semibold hover:bg-neutral-800 transition"
+                      >
+                        Proje Detayları
+                      </a>
+                    )}
                   </div>
-
-                  {language === 'tr' && project.catalogUrl && (
-                    <button
-                      onClick={() => openCatalogViewer(project.title, project.catalogUrl!)}
-                      className="mt-4 inline-flex w-full items-center justify-center px-5 py-3 bg-black text-white rounded-full font-semibold hover:bg-neutral-800 transition"
-                    >
-                      Proje Detayları
-                    </button>
-                  )}
                 </div>
               </div>
             );
@@ -651,38 +635,6 @@ export const Projects: React.FC = () => {
                 </button>
               )}
             </div>
-          </div>
-        </div>
-      )}
-
-      {catalogViewer && (
-        <div
-          onClick={closeCatalogViewer}
-          className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center px-3 py-5"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <div className="flex items-center justify-between px-4 py-3 bg-black text-white">
-              <h3 className="text-base sm:text-lg font-bold">
-                {catalogViewer.title} Kataloğu
-              </h3>
-
-              <button
-                onClick={closeCatalogViewer}
-                className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition"
-                aria-label="Close catalogue"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <iframe
-              src={catalogViewer.url}
-              title={`${catalogViewer.title} Kataloğu`}
-              className="w-full h-[calc(85vh-52px)]"
-            />
           </div>
         </div>
       )}
