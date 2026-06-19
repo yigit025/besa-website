@@ -234,49 +234,6 @@ images: [
   },
   {
     id: 9,
-    title: 'BESA Nova Konutları',
-    location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/yctcd18x/Whisk-82adc3c0dc.jpg',
-      'https://i.ibb.co/LzvzZqYR/Whisk-54c5ac9b5f.jpg',
-      'https://i.ibb.co/wFBwwgQH/Whisk-9c92c50bc1.jpg'
-    ],
-    units: {
-      tr: '36 Daire',
-      en: '36 Apartments'
-    },
-    completion: {
-      tr: 'Projede',
-      en: 'Under Construction'
-    },
-    description: {
-      tr: 'Modern mimarisi ve peyzajlı ortak alanlarıyla BESA Nova, konforlu yaşamın yeni adresi. Şehirle iç içe ama doğadan kopmayan özel bir site deneyimi sunar.',
-      en: 'With its modern architecture and landscaped communal areas, BESA Nova offers a comfortable residential experience close to the city while remaining connected to nature.'
-    }
-  },
-  {
-    id: 10,
-    title: 'BESA Valora Apartmanı',
-    location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg',
-      'https://i.ibb.co/xt94Hyqm/Whisk-4c4078ea15.jpg'
-    ],
-    units: {
-      tr: '16 Daire',
-      en: '16 Apartments'
-    },
-    completion: {
-      tr: 'Projede',
-      en: 'Under Construction'
-    },
-    description: {
-      tr: 'Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor.',
-      en: 'A strong example of modern urban architecture, distinguished by wide glass façades and elegant balcony details. Rising with the BESA difference.'
-    }
-  },
-  {
-    id: 11,
     title: 'BESA Ritim Akçaova 1',
     location: 'Akçaova, Menteşe, Muğla',
     images: [
@@ -299,7 +256,7 @@ images: [
     }
   },
   {
-    id: 12,
+    id: 10,
     title: 'BESA Ritim Akçaova 2',
     location: 'Akçaova, Menteşe, Muğla',
     images: [
