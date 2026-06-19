@@ -5,11 +5,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'besa-dark': '#2B2520',
-        'besa-blue': '#A67C3D',
-        'besa-beige': '#BFAF9B',
-        'besa-banner': '#CFC4B4',
-        'besa-cream': '#D8D0C4',
+        'besa-dark': '#2A2520',
+        'besa-blue': '#8C6A3D',
+        'besa-beige': '#B8A78E',
+        'besa-banner': '#D6C7B2',
+        'besa-cream': '#E7DDCF',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
