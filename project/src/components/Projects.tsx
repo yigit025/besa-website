@@ -28,11 +28,6 @@ type LightboxState = {
   title: string;
 };
 
-type CatalogViewerState = {
-  title: string;
-  url: string;
-};
-
 const Slider: React.FC<{
   images: string[];
   onImageClick: (index: number) => void;
@@ -334,7 +329,6 @@ export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
-  const [catalogViewer, setCatalogViewer] = useState<CatalogViewerState | null>(null);
   const yeniProjeRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
 
@@ -410,19 +404,6 @@ export const Projects: React.FC = () => {
     setLightbox(null);
   };
 
-  const openCatalogViewer = (title: string, catalogUrl: string) => {
-    const fullPdfUrl = `${window.location.origin}${catalogUrl}`;
-
-    setCatalogViewer({
-      title,
-      url: `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(fullPdfUrl)}`
-    });
-  };
-
-  const closeCatalogViewer = () => {
-    setCatalogViewer(null);
-  };
-
   const showPrevImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
 
@@ -453,12 +434,11 @@ export const Projects: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (!lightbox) return;
+
       if (event.key === 'Escape') {
         closeLightbox();
-        closeCatalogViewer();
       }
-
-      if (!lightbox) return;
 
       if (event.key === 'ArrowLeft') {
         showPrevImage();
@@ -572,12 +552,14 @@ export const Projects: React.FC = () => {
                   </div>
 
                   {language === 'tr' && project.catalogUrl && (
-                    <button
-                      onClick={() => openCatalogViewer(project.title, project.catalogUrl!)}
+                    <a
+                      href={project.catalogUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="mt-4 inline-flex w-full items-center justify-center px-5 py-3 bg-besa-blue text-white rounded-full font-semibold hover:bg-besa-dark transition"
                     >
-                      Detaylar için kataloğumuzu inceleyin
-                    </button>
+                      -->Proje Detayları<--
+                    </a>
                   )}
                 </div>
               </div>
@@ -651,38 +633,6 @@ export const Projects: React.FC = () => {
                 </button>
               )}
             </div>
-          </div>
-        </div>
-      )}
-
-      {catalogViewer && (
-        <div
-          onClick={closeCatalogViewer}
-          className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center px-3 py-5"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <div className="flex items-center justify-between px-4 py-3 bg-besa-dark text-white">
-              <h3 className="text-base sm:text-lg font-bold">
-                {catalogViewer.title} Kataloğu
-              </h3>
-
-              <button
-                onClick={closeCatalogViewer}
-                className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition"
-                aria-label="Close catalogue"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <iframe
-              src={catalogViewer.url}
-              title={`${catalogViewer.title} Kataloğu`}
-              className="w-full h-[calc(85vh-52px)]"
-            />
           </div>
         </div>
       )}
