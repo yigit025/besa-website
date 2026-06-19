@@ -46,6 +46,52 @@ const Slider: React.FC<{ images: string[] }> = ({ images }) => {
 
 const projects = [
   {
+    id: 11,
+    title: 'BESA Ritim Akçaova 1',
+    location: 'Akçaova, Menteşe, Muğla',
+    images: [
+      'https://i.ibb.co/DfpFd0st/myarchitectai-6i2y5fj0g-sd.png',
+      'https://i.ibb.co/HL5z5LLt/myarchitectai-fs2ttyjae-sd.png',
+      'https://i.ibb.co/93ZG8R1R/bah-ekat-proje.png',
+      'https://i.ibb.co/VYH4SNR8/kat123.png'
+    ],
+    units: {
+      tr: '64 Daire',
+      en: '64 Apartments'
+    },
+    completion: {
+      tr: 'Projede',
+      en: 'Under Construction'
+    },
+    description: {
+      tr: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.',
+      en: 'Combining the comfort of apartment living with the privilege of garden use, this project offers an exclusive lifestyle with modern architecture and private living spaces.'
+    }
+  },
+  {
+    id: 12,
+    title: 'BESA Ritim Akçaova 2',
+    location: 'Akçaova, Menteşe, Muğla',
+    images: [
+      'https://i.ibb.co/fdM3dpfY/MG-5208.jpg',
+      'https://i.ibb.co/sGPb8KB/MG-5210.jpg',
+      'https://i.ibb.co/nqSb69jT/bah-ekat.png',
+      'https://i.ibb.co/4wZj1FWm/kat123.png'
+    ],
+    units: {
+      tr: '32 Daire',
+      en: '32 Apartments'
+    },
+    completion: {
+      tr: 'Projede',
+      en: 'Under Construction'
+    },
+    description: {
+      tr: 'Gün ışığından maksimum verim alacak şekilde tasarlanan Ritim Akçaova 2, yaşamınızın her anında konforu ve ferahlığı hissetmeniz için hayata geçirildi. Modern mimari anlayışıyla yükselen projede; 4 katlı A ve B bloklarda odalarınızı süsleyecek doğa manzarası sizleri karşılıyor.',
+      en: 'Designed to make the most of natural daylight, Ritim Akçaova 2 offers comfort and spaciousness throughout daily life. Rising with a modern architectural approach, the project welcomes residents with nature views from the rooms in its four-storey A and B blocks.'
+    }
+  },
+  {
     id: 1,
     title: 'BESA Yıldız Evleri',
     location: 'Dalaman, Muğla',
@@ -118,15 +164,15 @@ const projects = [
     id: 4,
     title: 'BESA Residence Olea',
     location: 'Dalaman, Muğla',
-images: [
-  'https://i.ibb.co/Lz70wSgB/myarchitectai-kndpgqkexj-sd.png',
-  'https://i.ibb.co/DPGg9zFm/myarchitectai-wxn2lksi5-sd.png',
-  'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
-  'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
-  'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg',
-  'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
-  'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
-],
+    images: [
+      'https://i.ibb.co/Lz70wSgB/myarchitectai-kndpgqkexj-sd.png',
+      'https://i.ibb.co/DPGg9zFm/myarchitectai-wxn2lksi5-sd.png',
+      'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
+      'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
+      'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg',
+      'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
+      'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
+    ],
     units: {
       tr: '18 Daire',
       en: '18 Apartments'
@@ -231,52 +277,6 @@ images: [
       tr: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.',
       en: 'Reflecting the natural spirit of the Aegean, this exclusive villa project features a private pool, rich landscaping, and living spaces designed for maximum privacy.'
     }
-  },
-  {
-    id: 9,
-    title: 'BESA Ritim Akçaova 1',
-    location: 'Akçaova, Menteşe, Muğla',
-    images: [
-      'https://i.ibb.co/DfpFd0st/myarchitectai-6i2y5fj0g-sd.png',
-      'https://i.ibb.co/HL5z5LLt/myarchitectai-fs2ttyjae-sd.png',
-      'https://i.ibb.co/93ZG8R1R/bah-ekat-proje.png',
-      'https://i.ibb.co/VYH4SNR8/kat123.png'
-    ],
-    units: {
-      tr: '64 Daire',
-      en: '64 Apartments'
-    },
-    completion: {
-      tr: 'Projede',
-      en: 'Under Construction'
-    },
-    description: {
-      tr: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.',
-      en: 'Combining the comfort of apartment living with the privilege of garden use, this project offers an exclusive lifestyle with modern architecture and private living spaces.'
-    }
-  },
-  {
-    id: 10,
-    title: 'BESA Ritim Akçaova 2',
-    location: 'Akçaova, Menteşe, Muğla',
-    images: [
-      'https://i.ibb.co/fdM3dpfY/MG-5208.jpg',
-      'https://i.ibb.co/sGPb8KB/MG-5210.jpg',
-      'https://i.ibb.co/nqSb69jT/bah-ekat.png',
-      'https://i.ibb.co/4wZj1FWm/kat123.png'
-    ],
-    units: {
-      tr: '32 Daire',
-      en: '32 Apartments'
-    },
-    completion: {
-      tr: 'Projede',
-      en: 'Under Construction'
-    },
-    description: {
-      tr: 'Gün ışığından maksimum verim alacak şekilde tasarlanan Ritim Akçaova 2, yaşamınızın her anında konforu ve ferahlığı hissetmeniz için hayata geçirildi. Modern mimari anlayışıyla yükselen projede; 4 katlı A ve B bloklarda odalarınızı süsleyecek doğa manzarası sizleri karşılıyor.',
-      en: 'Designed to make the most of natural daylight, Ritim Akçaova 2 offers comfort and spaciousness throughout daily life. Rising with a modern architectural approach, the project welcomes residents with nature views from the rooms in its four-storey A and B blocks.'
-    }
   }
 ];
 
@@ -336,13 +336,13 @@ export const Projects: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500">
-          {visibleProjects.map((project) => {
-            const isYeniProje = project.id === 5;
+          {visibleProjects.map((project, index) => {
+            const isFirstHiddenProject = showAll && index === 4;
 
             return (
               <div
                 key={project.id}
-                ref={isYeniProje ? yeniProjeRef : null}
+                ref={isFirstHiddenProject ? yeniProjeRef : null}
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <div className="relative h-64">
