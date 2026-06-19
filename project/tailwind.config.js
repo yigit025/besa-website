@@ -7,9 +7,9 @@ export default {
       colors: {
         'besa-dark': '#2B2520',
         'besa-blue': '#A67C3D',
-        'besa-beige': '#D8C4A3',
-        'besa-banner': '#EFE6D8',
-        'besa-cream': '#F8F3EA',
+        'besa-beige': '#C6AD86',
+        'besa-banner': '#D7C3A3',
+        'besa-cream': '#E6D4B8',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
