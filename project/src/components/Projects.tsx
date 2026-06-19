@@ -5,6 +5,23 @@ import { useLanguage } from '../context/LanguageContext';
 type ProjectStatus = 'ongoing' | 'completed';
 type FilterType = 'all' | 'ongoing' | 'completed';
 
+type LanguageText = {
+  tr: string;
+  en: string;
+};
+
+type Project = {
+  id: number;
+  status: ProjectStatus;
+  title: string;
+  location: string;
+  images: string[];
+  units: LanguageText;
+  completion: LanguageText;
+  description: LanguageText;
+  catalogUrl?: string;
+};
+
 type LightboxState = {
   images: string[];
   currentIndex: number;
@@ -45,6 +62,7 @@ const Slider: React.FC<{
           >
             ‹
           </button>
+
           <button
             onClick={handleNext}
             className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 z-10"
@@ -57,10 +75,10 @@ const Slider: React.FC<{
   );
 };
 
-const projects = [
+const projects: Project[] = [
   {
     id: 11,
-    status: 'ongoing' as ProjectStatus,
+    status: 'ongoing',
     title: 'BESA Ritim Akçaova 1',
     location: 'Akçaova, Menteşe, Muğla',
     images: [
@@ -69,6 +87,7 @@ const projects = [
       'https://i.ibb.co/93ZG8R1R/bah-ekat-proje.png',
       'https://i.ibb.co/VYH4SNR8/kat123.png'
     ],
+    catalogUrl: '/catalogs/besa-ritim-akcaova-1.pdf',
     units: {
       tr: '64 Daire',
       en: '64 Apartments'
@@ -84,7 +103,7 @@ const projects = [
   },
   {
     id: 12,
-    status: 'ongoing' as ProjectStatus,
+    status: 'ongoing',
     title: 'BESA Ritim Akçaova 2',
     location: 'Akçaova, Menteşe, Muğla',
     images: [
@@ -93,6 +112,7 @@ const projects = [
       'https://i.ibb.co/nqSb69jT/bah-ekat.png',
       'https://i.ibb.co/4wZj1FWm/kat123.png'
     ],
+    catalogUrl: '/catalogs/besa-ritim-akcaova-2.pdf',
     units: {
       tr: '32 Daire',
       en: '32 Apartments'
@@ -108,7 +128,7 @@ const projects = [
   },
   {
     id: 4,
-    status: 'ongoing' as ProjectStatus,
+    status: 'ongoing',
     title: 'BESA Residence Olea',
     location: 'Dalaman, Muğla',
     images: [
@@ -120,6 +140,7 @@ const projects = [
       'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
       'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
     ],
+    catalogUrl: '/catalogs/besa-residence-olea.pdf',
     units: {
       tr: '18 Daire',
       en: '18 Apartments'
@@ -135,7 +156,7 @@ const projects = [
   },
   {
     id: 2,
-    status: 'completed' as ProjectStatus,
+    status: 'completed',
     title: 'BESA Masal Bahçe Evleri',
     location: 'Dalaman, Muğla',
     images: [
@@ -160,7 +181,7 @@ const projects = [
   },
   {
     id: 3,
-    status: 'completed' as ProjectStatus,
+    status: 'completed',
     title: 'BESA KentVadi Evleri',
     location: 'Ümraniye, İstanbul',
     images: [
@@ -184,7 +205,7 @@ const projects = [
   },
   {
     id: 1,
-    status: 'completed' as ProjectStatus,
+    status: 'completed',
     title: 'BESA Yıldız Evleri',
     location: 'Dalaman, Muğla',
     images: [
@@ -208,7 +229,7 @@ const projects = [
   },
   {
     id: 5,
-    status: 'completed' as ProjectStatus,
+    status: 'completed',
     title: 'BESA Yasemin Evleri',
     location: 'Dalaman, Muğla',
     images: [
@@ -232,7 +253,7 @@ const projects = [
   },
   {
     id: 6,
-    status: 'completed' as ProjectStatus,
+    status: 'completed',
     title: 'BESA Dinçer Apartmanı',
     location: 'Dalaman, Muğla',
     images: [
@@ -256,7 +277,7 @@ const projects = [
   },
   {
     id: 7,
-    status: 'completed' as ProjectStatus,
+    status: 'completed',
     title: 'BESA Sayan Evleri',
     location: 'Dalaman, Muğla',
     images: [
@@ -281,7 +302,7 @@ const projects = [
   },
   {
     id: 8,
-    status: 'completed' as ProjectStatus,
+    status: 'completed',
     title: 'BESA Design House',
     location: 'Dalaman, Muğla',
     images: [
@@ -360,7 +381,10 @@ export const Projects: React.FC = () => {
 
       if (!prev) {
         setTimeout(() => {
-          yeniProjeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          yeniProjeRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }, 300);
       }
 
@@ -388,7 +412,8 @@ export const Projects: React.FC = () => {
 
       return {
         ...prev,
-        currentIndex: prev.currentIndex === 0 ? prev.images.length - 1 : prev.currentIndex - 1
+        currentIndex:
+          prev.currentIndex === 0 ? prev.images.length - 1 : prev.currentIndex - 1
       };
     });
   };
@@ -401,7 +426,8 @@ export const Projects: React.FC = () => {
 
       return {
         ...prev,
-        currentIndex: prev.currentIndex === prev.images.length - 1 ? 0 : prev.currentIndex + 1
+        currentIndex:
+          prev.currentIndex === prev.images.length - 1 ? 0 : prev.currentIndex + 1
       };
     });
   };
@@ -524,6 +550,17 @@ export const Projects: React.FC = () => {
                       </span>
                     </div>
                   </div>
+
+                  {language === 'tr' && project.catalogUrl && (
+                    <a
+                      href={project.catalogUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex w-full items-center justify-center px-5 py-3 bg-besa-blue text-white rounded-full font-semibold hover:bg-besa-dark transition"
+                    >
+                      Detaylar için kataloğumuzu inceleyin
+                    </a>
+                  )}
                 </div>
               </div>
             );
