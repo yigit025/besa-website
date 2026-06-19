@@ -2,6 +2,9 @@ import React, { useState, useRef } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+type ProjectStatus = 'ongoing' | 'completed';
+type FilterType = 'all' | 'ongoing' | 'completed';
+
 const Slider: React.FC<{ images: string[] }> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -47,6 +50,7 @@ const Slider: React.FC<{ images: string[] }> = ({ images }) => {
 const projects = [
   {
     id: 11,
+    status: 'ongoing' as ProjectStatus,
     title: 'BESA Ritim Akçaova 1',
     location: 'Akçaova, Menteşe, Muğla',
     images: [
@@ -70,6 +74,7 @@ const projects = [
   },
   {
     id: 12,
+    status: 'ongoing' as ProjectStatus,
     title: 'BESA Ritim Akçaova 2',
     location: 'Akçaova, Menteşe, Muğla',
     images: [
@@ -93,6 +98,7 @@ const projects = [
   },
   {
     id: 1,
+    status: 'completed' as ProjectStatus,
     title: 'BESA Yıldız Evleri',
     location: 'Dalaman, Muğla',
     images: [
@@ -116,15 +122,15 @@ const projects = [
   },
   {
     id: 2,
+    status: 'completed' as ProjectStatus,
     title: 'BESA Masal Bahçe Evleri',
     location: 'Dalaman, Muğla',
     images: [
-  'https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg',
-  'https://i.ibb.co/wZM04BSY/95ea4ff6-221b-4898-b431-2ef7bb28e713.jpg',
-  'https://i.ibb.co/svjFLqZP/IMG-6633.jpg',
-  'https://i.ibb.co/Gfjpcf99/IMG-6644.jpg',
-  'https://i.ibb.co/XZKCGkX9/IMG-6632.jpg'
-],
+      'https://i.ibb.co/99k1yXxN/masal-bahce-evleri.jpg',
+      'https://i.ibb.co/wZM04BSY/95ea4ff6-221b-4898-b431-2ef7bb28e713.jpg',
+      'https://i.ibb.co/svjFLqZP/IMG-6633.jpg',
+      'https://i.ibb.co/Gfjpcf99/IMG-6644.jpg',
+      'https://i.ibb.co/XZKCGkX9/IMG-6632.jpg'
     ],
     units: {
       tr: '4 Villa',
@@ -141,6 +147,7 @@ const projects = [
   },
   {
     id: 3,
+    status: 'completed' as ProjectStatus,
     title: 'BESA KentVadi Evleri',
     location: 'Ümraniye, İstanbul',
     images: [
@@ -164,6 +171,7 @@ const projects = [
   },
   {
     id: 4,
+    status: 'ongoing' as ProjectStatus,
     title: 'BESA Residence Olea',
     location: 'Dalaman, Muğla',
     images: [
@@ -190,6 +198,7 @@ const projects = [
   },
   {
     id: 5,
+    status: 'completed' as ProjectStatus,
     title: 'BESA Yasemin Evleri',
     location: 'Dalaman, Muğla',
     images: [
@@ -213,6 +222,7 @@ const projects = [
   },
   {
     id: 6,
+    status: 'completed' as ProjectStatus,
     title: 'BESA Dinçer Apartmanı',
     location: 'Dalaman, Muğla',
     images: [
@@ -236,6 +246,7 @@ const projects = [
   },
   {
     id: 7,
+    status: 'completed' as ProjectStatus,
     title: 'BESA Sayan Evleri',
     location: 'Dalaman, Muğla',
     images: [
@@ -260,6 +271,7 @@ const projects = [
   },
   {
     id: 8,
+    status: 'completed' as ProjectStatus,
     title: 'BESA Design House',
     location: 'Dalaman, Muğla',
     images: [
@@ -284,6 +296,7 @@ const projects = [
 
 export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const yeniProjeRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
 
@@ -294,7 +307,12 @@ export const Projects: React.FC = () => {
         'BESA’nın yaşam alanları sadece binalar değil; modern hayatın yeniden tasarlanmış hâlidir.',
       completion: 'Teslim',
       seeMore: 'Daha Fazlasını Gör',
-      seeLess: 'Daha Azını Göster'
+      seeLess: 'Daha Azını Göster',
+      filters: {
+        all: 'Hepsi',
+        ongoing: 'Devam Eden',
+        completed: 'Tamamlanmış'
+      }
     },
     en: {
       title: 'Our Projects',
@@ -302,12 +320,28 @@ export const Projects: React.FC = () => {
         'BESA creates more than buildings; it designs refined living spaces for modern life.',
       completion: 'Completion',
       seeMore: 'View More',
-      seeLess: 'Show Less'
+      seeLess: 'Show Less',
+      filters: {
+        all: 'All',
+        ongoing: 'Ongoing',
+        completed: 'Completed'
+      }
     }
   };
 
   const t = text[language];
-  const visibleProjects = showAll ? projects : projects.slice(0, 4);
+
+  const filteredProjects =
+    activeFilter === 'all'
+      ? projects
+      : projects.filter((project) => project.status === activeFilter);
+
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
+
+  const handleFilterChange = (filter: FilterType) => {
+    setActiveFilter(filter);
+    setShowAll(false);
+  };
 
   const handleToggle = () => {
     setShowAll((prev) => {
@@ -323,11 +357,18 @@ export const Projects: React.FC = () => {
     });
   };
 
+  const filterButtonClass = (filter: FilterType) =>
+    `px-5 py-2 rounded-full font-semibold transition-all border ${
+      activeFilter === filter
+        ? 'bg-besa-dark text-white border-besa-dark shadow-md'
+        : 'bg-white text-besa-dark border-besa-dark/20 hover:bg-besa-dark/5'
+    }`;
+
   return (
     <section id="projects" className="py-20 bg-besa-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-4xl sm:text-5xl font-bold text-besa-dark mb-4">
             {t.title}
           </h2>
@@ -335,6 +376,29 @@ export const Projects: React.FC = () => {
           <p className="text-xl text-besa-dark/70 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+          <button
+            onClick={() => handleFilterChange('all')}
+            className={filterButtonClass('all')}
+          >
+            {t.filters.all}
+          </button>
+
+          <button
+            onClick={() => handleFilterChange('ongoing')}
+            className={filterButtonClass('ongoing')}
+          >
+            {t.filters.ongoing}
+          </button>
+
+          <button
+            onClick={() => handleFilterChange('completed')}
+            className={filterButtonClass('completed')}
+          >
+            {t.filters.completed}
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500">
@@ -388,14 +452,16 @@ export const Projects: React.FC = () => {
           })}
         </div>
 
-        <div className="text-center mt-12">
-          <button
-            onClick={handleToggle}
-            className="px-6 py-3 bg-besa-dark text-white rounded-full hover:bg-besa-dark/90 transition"
-          >
-            {showAll ? t.seeLess : t.seeMore}
-          </button>
-        </div>
+        {filteredProjects.length > 4 && (
+          <div className="text-center mt-12">
+            <button
+              onClick={handleToggle}
+              className="px-6 py-3 bg-besa-dark text-white rounded-full hover:bg-besa-dark/90 transition"
+            >
+              {showAll ? t.seeLess : t.seeMore}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
