@@ -37,15 +37,16 @@ export const Header: React.FC = () => {
 
           {/* SEARCH + LANGUAGE + MENU (mobile) */}
           <div className="flex items-center space-x-4 lg:hidden">
+
             {/* Search icon */}
             <button className="p-1">
               <Search className="w-5 h-5 text-besa-dark" />
             </button>
 
             {/* Language selector */}
-            <select className="text-sm text-besa-dark bg-transparent focus:outline-none">
-              <option value="tr">TR</option>
-              <option value="en">EN</option>
+            <select className="text-sm font-bold text-besa-dark bg-transparent focus:outline-none cursor-pointer">
+              <option value="tr">🇹🇷 TR</option>
+              <option value="en">🇬🇧 EN</option>
             </select>
 
             {/* Mobile menu toggle */}
@@ -54,16 +55,26 @@ export const Header: React.FC = () => {
             </button>
           </div>
 
-          {/* CONTACT INFO (desktop) */}
+          {/* CONTACT INFO + LANGUAGE (desktop) */}
           <div className="hidden lg:flex items-center space-x-4">
+
             <div className="flex items-center space-x-2 text-sm text-besa-dark/70">
               <Phone className="w-4 h-4" />
               <span className="font-semibold">+90 533 016 98 48</span>
             </div>
+
             <div className="flex items-center space-x-2 text-sm text-besa-dark/70">
               <Mail className="w-4 h-4" />
               <span className="font-semibold">info@besainsaat.net</span>
             </div>
+
+            <div className="h-5 w-px bg-besa-dark/20"></div>
+
+            <select className="text-sm font-bold text-besa-dark bg-transparent border border-besa-dark/20 rounded-full px-3 py-1 focus:outline-none cursor-pointer">
+              <option value="tr">🇹🇷 TR</option>
+              <option value="en">🇬🇧 EN</option>
+            </select>
+
           </div>
         </div>
 
