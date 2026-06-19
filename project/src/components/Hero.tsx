@@ -1,7 +1,29 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Hero: React.FC = () => {
+  const { language } = useLanguage();
+
+  const text = {
+    tr: {
+      titleFirst: 'SİZ EN İYİSİNE',
+      titleSecond: 'LAYIKSINIZ',
+      description:
+        'BESA ile modern mimari çizgilerde tasarlanmış, konforlu ve prestijli yaşam alanlarını keşfedin.',
+      button: 'Projelerimiz'
+    },
+    en: {
+      titleFirst: 'YOU DESERVE',
+      titleSecond: 'THE BEST',
+      description:
+        'Discover comfortable and prestigious living spaces designed with modern architectural lines by BESA.',
+      button: 'Our Projects'
+    }
+  };
+
+  const t = text[language];
+
   return (
     <section
       id="home"
@@ -10,7 +32,7 @@ export const Hero: React.FC = () => {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/video.mp4" // 📌 Videoyu buraya koymalısın: public/videos/hero-video.mp4
+        src="/videos/video.mp4"
         autoPlay
         muted
         loop
@@ -23,26 +45,27 @@ export const Hero: React.FC = () => {
       {/* Text Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          SİZ EN İYİSİNE
+          {t.titleFirst}
           <br />
-          <span className="text-besa-beige">LAYIKSINIZ</span>
+          <span className="text-besa-beige">{t.titleSecond}</span>
         </h1>
 
         <p className="text-xl sm:text-2xl mb-8 max-w-3xl mx-auto font-light leading-relaxed">
-          BESA ile modern mimari çizgilerde tasarlanmış, konforlu ve prestijli yaşam alanlarını keşfedin.
+          {t.description}
         </p>
 
         <div className="flex justify-center">
           <button
             onClick={() => {
-              const section = document.getElementById("projects");
+              const section = document.getElementById('projects');
+
               if (section) {
-                section.scrollIntoView({ behavior: "smooth" });
+                section.scrollIntoView({ behavior: 'smooth' });
               }
             }}
             className="group bg-besa-blue hover:bg-besa-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center space-x-2"
           >
-            <span>Projelerimiz</span>
+            <span>{t.button}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
