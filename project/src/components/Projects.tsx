@@ -107,27 +107,30 @@ const projects = [
     }
   },
   {
-    id: 1,
-    status: 'completed' as ProjectStatus,
-    title: 'BESA Yıldız Evleri',
+    id: 4,
+    status: 'ongoing' as ProjectStatus,
+    title: 'BESA Residence Olea',
     location: 'Dalaman, Muğla',
     images: [
-      'https://i.ibb.co/vx57yFzC/yildiz-evleri.png',
-      'https://i.ibb.co/Ng1GSmhF/De-Watermark-ai-1752487181431.jpg',
-      'https://i.ibb.co/rGL7dDvr/De-Watermark-ai-1752487314135.jpg',
-      'https://i.ibb.co/Q3B4T4VY/De-Watermark-ai-1752487404795.jpg'
+      'https://i.ibb.co/Lz70wSgB/myarchitectai-kndpgqkexj-sd.png',
+      'https://i.ibb.co/DPGg9zFm/myarchitectai-wxn2lksi5-sd.png',
+      'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
+      'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
+      'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg',
+      'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
+      'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
     ],
     units: {
-      tr: '24 Daire',
-      en: '24 Apartments'
+      tr: '18 Daire',
+      en: '18 Apartments'
     },
     completion: {
-      tr: '2022',
-      en: '2022'
+      tr: 'Devam ediyor.',
+      en: 'Ongoing'
     },
     description: {
-      tr: 'Panoramik orman manzaralı ve premium olanaklara sahip modern konut kompleksi.',
-      en: 'A contemporary residential project offering panoramic forest views, refined architectural details, and premium living comfort.'
+      tr: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.',
+      en: 'BESA Residence Olea is designed to offer a safe environment for children, a peaceful lifestyle for families, and a sustainable living experience for everyone.'
     }
   },
   {
@@ -180,30 +183,27 @@ const projects = [
     }
   },
   {
-    id: 4,
-    status: 'ongoing' as ProjectStatus,
-    title: 'BESA Residence Olea',
+    id: 1,
+    status: 'completed' as ProjectStatus,
+    title: 'BESA Yıldız Evleri',
     location: 'Dalaman, Muğla',
     images: [
-      'https://i.ibb.co/Lz70wSgB/myarchitectai-kndpgqkexj-sd.png',
-      'https://i.ibb.co/DPGg9zFm/myarchitectai-wxn2lksi5-sd.png',
-      'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
-      'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
-      'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg',
-      'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
-      'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
+      'https://i.ibb.co/vx57yFzC/yildiz-evleri.png',
+      'https://i.ibb.co/Ng1GSmhF/De-Watermark-ai-1752487181431.jpg',
+      'https://i.ibb.co/rGL7dDvr/De-Watermark-ai-1752487314135.jpg',
+      'https://i.ibb.co/Q3B4T4VY/De-Watermark-ai-1752487404795.jpg'
     ],
     units: {
-      tr: '18 Daire',
-      en: '18 Apartments'
+      tr: '24 Daire',
+      en: '24 Apartments'
     },
     completion: {
-      tr: 'Devam ediyor.',
-      en: 'Ongoing'
+      tr: '2022',
+      en: '2022'
     },
     description: {
-      tr: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.',
-      en: 'BESA Residence Olea is designed to offer a safe environment for children, a peaceful lifestyle for families, and a sustainable living experience for everyone.'
+      tr: 'Panoramik orman manzaralı ve premium olanaklara sahip modern konut kompleksi.',
+      en: 'A contemporary residential project offering panoramic forest views, refined architectural details, and premium living comfort.'
     }
   },
   {
