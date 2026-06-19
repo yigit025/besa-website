@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { MapPin, Home, Calendar } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Slider: React.FC<{ images: string[] }> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,9 +55,18 @@ const projects = [
       'https://i.ibb.co/rGL7dDvr/De-Watermark-ai-1752487314135.jpg',
       'https://i.ibb.co/Q3B4T4VY/De-Watermark-ai-1752487404795.jpg'
     ],
-    units: '24 Daire',
-    completion: '2022',
-    description: 'Panoramik orman manzaralı ve premium olanaklara sahip modern konut kompleksi.'
+    units: {
+      tr: '24 Daire',
+      en: '24 Apartments'
+    },
+    completion: {
+      tr: '2022',
+      en: '2022'
+    },
+    description: {
+      tr: 'Panoramik orman manzaralı ve premium olanaklara sahip modern konut kompleksi.',
+      en: 'A modern residential complex with panoramic forest views and premium amenities.'
+    }
   },
   {
     id: 2,
@@ -68,9 +78,18 @@ const projects = [
       'https://i.ibb.co/Gfjpcf99/IMG-6644.jpg',
       'https://i.ibb.co/XZKCGkX9/IMG-6632.jpg'
     ],
-    units: '4 Villa',
-    completion: '2024',
-    description: 'Şehrin kalbinde sofistike şehir yaşamı sunan lüks villalar.'
+    units: {
+      tr: '4 Villa',
+      en: '4 Villas'
+    },
+    completion: {
+      tr: '2024',
+      en: '2024'
+    },
+    description: {
+      tr: 'Şehrin kalbinde sofistike şehir yaşamı sunan lüks villalar.',
+      en: 'Luxury villas offering a sophisticated lifestyle in the heart of the city.'
+    }
   },
   {
     id: 3,
@@ -81,10 +100,19 @@ const projects = [
       'https://i.ibb.co/Kj49MT0n/Whisk-16fa306fcf.jpg',
       'https://i.ibb.co/Q36CDGxQ/Whisk-1aeb275275.jpg',
       'https://i.ibb.co/fYYW81FV/Whisk-df347d0863.jpg'
-            ],
-    units: '32 Daire',
-    completion: '2020',
-    description: 'Aile yaşamına uygun, sosyal alanlarla çevrili butik bir apartman projesi. Metroya 5 dakika, huzura bir adım.'
+    ],
+    units: {
+      tr: '32 Daire',
+      en: '32 Apartments'
+    },
+    completion: {
+      tr: '2020',
+      en: '2020'
+    },
+    description: {
+      tr: 'Aile yaşamına uygun, sosyal alanlarla çevrili butik bir apartman projesi. Metroya 5 dakika, huzura bir adım.',
+      en: 'A boutique apartment project designed for family living, surrounded by social areas. Five minutes from the metro, one step closer to peace.'
+    }
   },
   {
     id: 4,
@@ -98,9 +126,18 @@ const projects = [
       'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
       'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
     ],
-    units: '18 Daire',
-    completion: 'Devam ediyor.',
-    description: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.'
+    units: {
+      tr: '18 Daire',
+      en: '18 Apartments'
+    },
+    completion: {
+      tr: 'Devam ediyor.',
+      en: 'Ongoing'
+    },
+    description: {
+      tr: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.',
+      en: 'BESA Residence Olea was designed with the promise of a safe life for children, a peaceful life for families, and a sustainable lifestyle for everyone.'
+    }
   },
   {
     id: 5,
@@ -112,9 +149,18 @@ const projects = [
       'https://i.ibb.co/8LDDMDWy/Whisk-ccef90cccb.jpg',
       'https://i.ibb.co/LhbVnTrz/Whisk-399d4b76a6.jpg'
     ],
-    units: '12 Daire',
-    completion: '2023',
-    description: 'Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı.'
+    units: {
+      tr: '12 Daire',
+      en: '12 Apartments'
+    },
+    completion: {
+      tr: '2023',
+      en: '2023'
+    },
+    description: {
+      tr: 'Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı.',
+      en: 'A modern living space offering an independent lifestyle surrounded by nature.'
+    }
   },
   {
     id: 6,
@@ -126,9 +172,18 @@ const projects = [
       'https://i.ibb.co/ynXpWt06/IMG-6498.jpg',
       'https://i.ibb.co/3YCTk8Dw/IMG-6493.jpg'
     ],
-    units: '9 Daire',
-    completion: '2024',
-    description: 'Ege esintili mimarisiyle dikkat çeken özel apartman projesi.'
+    units: {
+      tr: '9 Daire',
+      en: '9 Apartments'
+    },
+    completion: {
+      tr: '2024',
+      en: '2024'
+    },
+    description: {
+      tr: 'Ege esintili mimarisiyle dikkat çeken özel apartman projesi.',
+      en: 'A distinctive apartment project standing out with its Aegean-inspired architecture.'
+    }
   },
   {
     id: 7,
@@ -141,9 +196,18 @@ const projects = [
       'https://i.ibb.co/WWds9BQX/545a7e7e-64c1-4c54-881a-2a2c75f1.jpg',
       'https://i.ibb.co/8LRWjrF4/7cabf5b9-f51a-443d-a10c-9da349c2.jpg'
     ],
-    units: '2 Villa',
-    completion: '2024',
-    description: 'Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar.'
+    units: {
+      tr: '2 Villa',
+      en: '2 Villas'
+    },
+    completion: {
+      tr: '2024',
+      en: '2024'
+    },
+    description: {
+      tr: 'Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar.',
+      en: 'A boutique project consisting of only two villas, offering peace, privacy, and a life surrounded by nature.'
+    }
   },
   {
     id: 8,
@@ -154,9 +218,18 @@ const projects = [
       'https://i.ibb.co/YFP1wwtT/IMG-1233.jpg',
       'https://i.ibb.co/Tx4q5Xfy/IMG-1234.jpg'
     ],
-    units: 'Tek Villa',
-    completion: '2025',
-    description: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.'
+    units: {
+      tr: 'Tek Villa',
+      en: 'Single Villa'
+    },
+    completion: {
+      tr: '2025',
+      en: '2025'
+    },
+    description: {
+      tr: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.',
+      en: 'Reflecting the natural spirit of the Aegean, this special project was designed with a private pool villa, rich landscaping, and living spaces that offer maximum privacy.'
+    }
   },
   {
     id: 9,
@@ -167,9 +240,18 @@ const projects = [
       'https://i.ibb.co/LzvzZqYR/Whisk-54c5ac9b5f.jpg',
       'https://i.ibb.co/wFBwwgQH/Whisk-9c92c50bc1.jpg'
     ],
-    units: '36 Daire',
-    completion: 'Projede',
-    description: 'Modern mimarisi ve peyzajlı ortak alanlarıyla BESA Nova, konforlu yaşamın yeni adresi. Şehirle iç içe ama doğadan kopmayan özel bir site deneyimi sunar.'
+    units: {
+      tr: '36 Daire',
+      en: '36 Apartments'
+    },
+    completion: {
+      tr: 'Projede',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'Modern mimarisi ve peyzajlı ortak alanlarıyla BESA Nova, konforlu yaşamın yeni adresi. Şehirle iç içe ama doğadan kopmayan özel bir site deneyimi sunar.',
+      en: 'With its modern architecture and landscaped common areas, BESA Nova is the new address of comfortable living. It offers a special residential experience close to the city yet connected to nature.'
+    }
   },
   {
     id: 10,
@@ -179,53 +261,104 @@ const projects = [
       'https://i.ibb.co/1Y03ps3m/Whisk-da02858bca.jpg',
       'https://i.ibb.co/xt94Hyqm/Whisk-4c4078ea15.jpg'
     ],
-    units: '16 Daire',
-    completion: 'Projede',
-    description: 'Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor.'
+    units: {
+      tr: '16 Daire',
+      en: '16 Apartments'
+    },
+    completion: {
+      tr: 'Projede',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor.',
+      en: 'A strong example of modern urban architecture with wide glass façades and elegant balcony details. Rising with the BESA difference.'
+    }
   },
   {
-  id: 11,
-  title: 'BESA Ritim Akçaova 1',
-  location: 'Akçaova, Menteşe, Muğla',
-  images: [
-    'https://i.ibb.co/DfpFd0st/myarchitectai-6i2y5fj0g-sd.png',
-    'https://i.ibb.co/HL5z5LLt/myarchitectai-fs2ttyjae-sd.png',
-    'https://i.ibb.co/93ZG8R1R/bah-ekat-proje.png',
-    'https://i.ibb.co/VYH4SNR8/kat123.png'
-  ],
-  units: '64 Daire',
-  completion: 'Projede',
-  description: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.'
-},
+    id: 11,
+    title: 'BESA Ritim Akçaova 1',
+    location: 'Akçaova, Menteşe, Muğla',
+    images: [
+      'https://i.ibb.co/DfpFd0st/myarchitectai-6i2y5fj0g-sd.png',
+      'https://i.ibb.co/HL5z5LLt/myarchitectai-fs2ttyjae-sd.png',
+      'https://i.ibb.co/93ZG8R1R/bah-ekat-proje.png',
+      'https://i.ibb.co/VYH4SNR8/kat123.png'
+    ],
+    units: {
+      tr: '64 Daire',
+      en: '64 Apartments'
+    },
+    completion: {
+      tr: 'Projede',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.',
+      en: 'Combining the comfort of apartment living with the privilege of garden use, this project offers an exclusive lifestyle. It stands out with its modern architecture and private living spaces.'
+    }
+  },
   {
-  id: 12,
-  title: 'BESA Ritim Akçaova 2',
-  location: 'Akçaova, Menteşe, Muğla',
-  images: [
-    'https://i.ibb.co/fdM3dpfY/MG-5208.jpg',
-    'https://i.ibb.co/sGPb8KB/MG-5210.jpg',
-    'https://i.ibb.co/nqSb69jT/bah-ekat.png',
-    'https://i.ibb.co/4wZj1FWm/kat123.png'
-  ],
-  units: '32 Daire',
-  completion: 'Projede',
-  description: 'Gün ışığından maksimum verim alacak şekilde tasarlanan Ritim Akçaova 2, yaşamınızın her anında konforu ve ferahlığı hissetmeniz için hayata geçirildi. Modern mimari anlayışıyla yükselen projede; 4 katlı A ve B bloklarda odalarınızı süsleyecek doğa manzarası sizleri karşılıyor.'
-}
+    id: 12,
+    title: 'BESA Ritim Akçaova 2',
+    location: 'Akçaova, Menteşe, Muğla',
+    images: [
+      'https://i.ibb.co/fdM3dpfY/MG-5208.jpg',
+      'https://i.ibb.co/sGPb8KB/MG-5210.jpg',
+      'https://i.ibb.co/nqSb69jT/bah-ekat.png',
+      'https://i.ibb.co/4wZj1FWm/kat123.png'
+    ],
+    units: {
+      tr: '32 Daire',
+      en: '32 Apartments'
+    },
+    completion: {
+      tr: 'Projede',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'Gün ışığından maksimum verim alacak şekilde tasarlanan Ritim Akçaova 2, yaşamınızın her anında konforu ve ferahlığı hissetmeniz için hayata geçirildi. Modern mimari anlayışıyla yükselen projede; 4 katlı A ve B bloklarda odalarınızı süsleyecek doğa manzarası sizleri karşılıyor.',
+      en: 'Designed to make maximum use of daylight, Ritim Akçaova 2 was brought to life so you can feel comfort and spaciousness in every moment of your life. Rising with a modern architectural approach, the project welcomes you with nature views from the rooms in its 4-storey A and B blocks.'
+    }
+  }
 ];
 
 export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const yeniProjeRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
+
+  const text = {
+    tr: {
+      title: 'Projelerimiz',
+      subtitle:
+        'BESA’nın yaşam alanları sadece binalar değil; modern hayatın yeniden tasarlanmış hâlidir.',
+      delivery: 'Teslim',
+      seeMore: 'Daha Fazlasını Gör',
+      seeLess: 'Daha Azını Göster'
+    },
+    en: {
+      title: 'Our Projects',
+      subtitle:
+        'BESA living spaces are not just buildings; they are a reimagined version of modern life.',
+      delivery: 'Delivery',
+      seeMore: 'See More',
+      seeLess: 'Show Less'
+    }
+  };
+
+  const t = text[language];
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   const handleToggle = () => {
     setShowAll((prev) => {
       const next = !prev;
+
       if (!prev) {
         setTimeout(() => {
           yeniProjeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 300);
       }
+
       return next;
     });
   };
@@ -233,16 +366,21 @@ export const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-20 bg-besa-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-besa-dark mb-4">Projelerimiz</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-besa-dark mb-4">
+            {t.title}
+          </h2>
+
           <p className="text-xl text-besa-dark/70 max-w-2xl mx-auto">
-            BESA’nın yaşam alanları sadece binalar değil; modern hayatın yeniden tasarlanmış hâlidir.
+            {t.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500">
           {visibleProjects.map((project) => {
             const isYeniProje = project.id === 5;
+
             return (
               <div
                 key={project.id}
@@ -251,7 +389,9 @@ export const Projects: React.FC = () => {
               >
                 <div className="relative h-64">
                   <Slider images={project.images} />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
                   <div className="absolute bottom-4 left-4 text-white">
                     <div className="flex items-center space-x-2 text-sm">
                       <MapPin className="w-4 h-4" />
@@ -261,16 +401,25 @@ export const Projects: React.FC = () => {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-besa-dark mb-2">{project.title}</h3>
-                  <p className="text-besa-dark/70 mb-4">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-besa-dark mb-2">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-besa-dark/70 mb-4">
+                    {project.description[language]}
+                  </p>
+
                   <div className="flex items-center justify-between text-sm text-besa-dark/60 mb-4">
                     <div className="flex items-center space-x-2">
                       <Home className="w-4 h-4" />
-                      <span>{project.units}</span>
+                      <span>{project.units[language]}</span>
                     </div>
+
                     <div className="flex items-center space-x-2">
                       <Calendar className="w-4 h-4" />
-                      <span>Teslim: {project.completion}</span>
+                      <span>
+                        {t.delivery}: {project.completion[language]}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -284,7 +433,7 @@ export const Projects: React.FC = () => {
             onClick={handleToggle}
             className="px-6 py-3 bg-besa-dark text-white rounded-full hover:bg-besa-dark/90 transition"
           >
-            {showAll ? 'Daha Azını Göster' : 'Daha Fazlasını Gör'}
+            {showAll ? t.seeLess : t.seeMore}
           </button>
         </div>
       </div>
