@@ -118,14 +118,15 @@ const projects = [
     id: 4,
     title: 'BESA Residence Olea',
     location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/sJp6xdCs/besa-residence-olea.jpg',
-      'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
-      'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
-      'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg',
-      'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
-      'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
-    ],
+images: [
+  'https://i.ibb.co/Lz70wSgB/myarchitectai-kndpgqkexj-sd.png',
+  'https://i.ibb.co/DPGg9zFm/myarchitectai-wxn2lksi5-sd.png',
+  'https://i.ibb.co/RkJmHz2t/Whisk-efd14a1347.jpg',
+  'https://i.ibb.co/FbytYXG2/Whisk-9b25a3f87e.jpg',
+  'https://i.ibb.co/tPnkxqKx/Whisk-282cf664fd.jpg',
+  'https://i.ibb.co/rGLTL5hT/1-VE-2-KAT-KULAK-DAI-RE.jpg',
+  'https://i.ibb.co/HT7Wcw48/1-VE-2-KAT-ORTA-DAI-RE.jpg'
+],
     units: {
       tr: '18 Daire',
       en: '18 Apartments'
