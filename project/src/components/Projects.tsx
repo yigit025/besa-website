@@ -1,11 +1,20 @@
-import React, { useState, useRef } from 'react';
-import { MapPin, Home, Calendar } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { MapPin, Home, Calendar, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 type ProjectStatus = 'ongoing' | 'completed';
 type FilterType = 'all' | 'ongoing' | 'completed';
 
-const Slider: React.FC<{ images: string[] }> = ({ images }) => {
+type LightboxState = {
+  images: string[];
+  currentIndex: number;
+  title: string;
+};
+
+const Slider: React.FC<{
+  images: string[];
+  onImageClick: (index: number) => void;
+}> = ({ images, onImageClick }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -24,7 +33,8 @@ const Slider: React.FC<{ images: string[] }> = ({ images }) => {
         key={currentIndex}
         src={images[currentIndex]}
         alt={`slide-${currentIndex}`}
-        className="w-full h-64 object-cover transition-all duration-300 ease-in-out"
+        onClick={() => onImageClick(currentIndex)}
+        className="w-full h-64 object-cover transition-all duration-300 ease-in-out cursor-zoom-in"
       />
 
       {images.length > 1 && (
@@ -297,6 +307,7 @@ const projects = [
 export const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const [lightbox, setLightbox] = useState<LightboxState | null>(null);
   const yeniProjeRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
 
@@ -357,6 +368,68 @@ export const Projects: React.FC = () => {
     });
   };
 
+  const openLightbox = (images: string[], currentIndex: number, title: string) => {
+    setLightbox({
+      images,
+      currentIndex,
+      title
+    });
+  };
+
+  const closeLightbox = () => {
+    setLightbox(null);
+  };
+
+  const showPrevImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+
+    setLightbox((prev) => {
+      if (!prev) return prev;
+
+      return {
+        ...prev,
+        currentIndex: prev.currentIndex === 0 ? prev.images.length - 1 : prev.currentIndex - 1
+      };
+    });
+  };
+
+  const showNextImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+
+    setLightbox((prev) => {
+      if (!prev) return prev;
+
+      return {
+        ...prev,
+        currentIndex: prev.currentIndex === prev.images.length - 1 ? 0 : prev.currentIndex + 1
+      };
+    });
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!lightbox) return;
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+
+      if (event.key === 'ArrowLeft') {
+        showPrevImage();
+      }
+
+      if (event.key === 'ArrowRight') {
+        showNextImage();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [lightbox]);
+
   const filterButtonClass = (filter: FilterType) =>
     `px-5 py-2 rounded-full font-semibold transition-all border ${
       activeFilter === filter
@@ -412,11 +485,16 @@ export const Projects: React.FC = () => {
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <div className="relative h-64">
-                  <Slider images={project.images} />
+                  <Slider
+                    images={project.images}
+                    onImageClick={(imageIndex) =>
+                      openLightbox(project.images, imageIndex, project.title)
+                    }
+                  />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
 
-                  <div className="absolute bottom-4 left-4 text-white">
+                  <div className="absolute bottom-4 left-4 text-white pointer-events-none">
                     <div className="flex items-center space-x-2 text-sm">
                       <MapPin className="w-4 h-4" />
                       <span>{project.location}</span>
@@ -463,6 +541,64 @@ export const Projects: React.FC = () => {
           </div>
         )}
       </div>
+
+      {lightbox && (
+        <div
+          onClick={closeLightbox}
+          className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center px-4 py-6"
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-5 right-5 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition z-20"
+            aria-label="Close image"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-6xl flex flex-col items-center"
+          >
+            <div className="text-white text-center mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold">
+                {lightbox.title}
+              </h3>
+
+              <p className="text-white/70 text-sm mt-1">
+                {lightbox.currentIndex + 1} / {lightbox.images.length}
+              </p>
+            </div>
+
+            <div className="relative w-full flex items-center justify-center">
+              {lightbox.images.length > 1 && (
+                <button
+                  onClick={showPrevImage}
+                  className="absolute left-0 sm:left-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center text-3xl z-10 transition"
+                  aria-label="Previous image"
+                >
+                  ‹
+                </button>
+              )}
+
+              <img
+                src={lightbox.images[lightbox.currentIndex]}
+                alt={`${lightbox.title}-${lightbox.currentIndex}`}
+                className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl"
+              />
+
+              {lightbox.images.length > 1 && (
+                <button
+                  onClick={showNextImage}
+                  className="absolute right-0 sm:right-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center text-3xl z-10 transition"
+                  aria-label="Next image"
+                >
+                  ›
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
