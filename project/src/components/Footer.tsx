@@ -9,22 +9,18 @@ export const Footer: React.FC = () => {
     tr: {
       description:
         'Her ayrıntısı özenle düşünülmüş, zamansız bir yaşam deneyimi sunan projeler geliştiriyoruz. BESA İnşaat, lüks ve konforu bir araya getirerek sizi sadece bir eve değil, hayalini kurduğunuz yaşama davet ediyor.',
-      quickLinksTitle: 'Hızlı Bağlantılar',
-      servicesTitle: 'Hizmetler',
-      links: {
-        home: 'Ana Sayfa',
-        projects: 'Projeler',
-        about: 'Hakkımızda',
-        services: 'Hizmetler',
-        contact: 'İletişim'
-      },
-      services: [
-        'Yapı ve İnşaat',
-        'Proje Tasarımı',
-        'Uygulama & Tadilat',
-        'Teslim Sonrası Hizmet',
-        'Taahhüt'
-      ],
+      quickLinks: 'Hızlı Bağlantılar',
+      services: 'Hizmetler',
+      home: 'Ana Sayfa',
+      projects: 'Projeler',
+      about: 'Hakkımızda',
+      servicesMenu: 'Hizmetler',
+      contact: 'İletişim',
+      construction: 'Yapı ve İnşaat',
+      design: 'Proje Tasarımı',
+      renovation: 'Uygulama & Tadilat',
+      afterDelivery: 'Teslim Sonrası Hizmet',
+      commitment: 'Taahhüt',
       copyright: '© 2025 BESA İnşaat. Tüm hakları saklıdır.',
       privacy: 'Gizlilik Politikası',
       terms: 'Hizmet Şartları',
@@ -32,24 +28,20 @@ export const Footer: React.FC = () => {
     },
     en: {
       description:
-        'We develop thoughtfully designed projects that offer a timeless living experience. BESA İnşaat brings luxury and comfort together, inviting you not only to a home, but to the lifestyle you have envisioned.',
-      quickLinksTitle: 'Quick Links',
-      servicesTitle: 'Services',
-      links: {
-        home: 'Home',
-        projects: 'Projects',
-        about: 'About Us',
-        services: 'Services',
-        contact: 'Contact'
-      },
-      services: [
-        'Construction & Building',
-        'Project Design',
-        'Implementation & Renovation',
-        'After-Delivery Support',
-        'Contracting'
-      ],
-      copyright: '© 2025 BESA İnşaat. All rights reserved.',
+        'We develop projects that offer a timeless living experience, thoughtfully designed in every detail. BESA Construction brings luxury and comfort together, inviting you not only to a home but to the life you dream of.',
+      quickLinks: 'Quick Links',
+      services: 'Services',
+      home: 'Home',
+      projects: 'Projects',
+      about: 'About Us',
+      servicesMenu: 'Services',
+      contact: 'Contact',
+      construction: 'Construction & Building',
+      design: 'Project Design',
+      renovation: 'Implementation & Renovation',
+      afterDelivery: 'After-Delivery Support',
+      commitment: 'Contracting',
+      copyright: '© 2025 BESA Construction. All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       cookies: 'Cookie Policy'
@@ -74,35 +66,32 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-besa-dark text-white py-16">
+    <footer className="bg-black text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-
+          {/* Brand */}
           <div>
-            <h3 className="text-3xl font-bold mb-6">
+            <h3 className="text-4xl font-black mb-8 text-white">
               BESA
             </h3>
 
-            <p className="text-white/70 leading-relaxed mb-6">
+            <p className="text-white/80 leading-relaxed text-lg mb-8 max-w-md">
               {t.description}
             </p>
 
             <div className="flex items-center space-x-4">
-
               <button
-                type="button"
                 onClick={handleScrollToTop}
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </button>
 
               <button
-                type="button"
                 onClick={handleScrollToTop}
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
@@ -112,97 +101,128 @@ export const Footer: React.FC = () => {
                 href="https://www.instagram.com/besamimarlikinsaat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
 
               <button
-                type="button"
                 onClick={handleScrollToTop}
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </button>
 
               <button
-                type="button"
                 onClick={handleScrollToTop}
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
               </button>
-
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-6">
-              {t.quickLinksTitle}
+            <h4 className="text-2xl font-bold mb-8 text-white">
+              {t.quickLinks}
             </h4>
 
-            <ul className="space-y-3 text-white/70">
+            <ul className="space-y-4 text-lg">
               <li>
-                <button onClick={() => handleSmoothScroll('home')} className="hover:text-white transition">
-                  {t.links.home}
+                <button
+                  onClick={() => handleSmoothScroll('home')}
+                  className="text-white/80 hover:text-white transition"
+                >
+                  {t.home}
                 </button>
               </li>
+
               <li>
-                <button onClick={() => handleSmoothScroll('projects')} className="hover:text-white transition">
-                  {t.links.projects}
+                <button
+                  onClick={() => handleSmoothScroll('projects')}
+                  className="text-white/80 hover:text-white transition"
+                >
+                  {t.projects}
                 </button>
               </li>
+
               <li>
-                <button onClick={() => handleSmoothScroll('about')} className="hover:text-white transition">
-                  {t.links.about}
+                <button
+                  onClick={() => handleSmoothScroll('about')}
+                  className="text-white/80 hover:text-white transition"
+                >
+                  {t.about}
                 </button>
               </li>
+
               <li>
-                <button onClick={() => handleSmoothScroll('services')} className="hover:text-white transition">
-                  {t.links.services}
+                <button
+                  onClick={() => handleSmoothScroll('services')}
+                  className="text-white/80 hover:text-white transition"
+                >
+                  {t.servicesMenu}
                 </button>
               </li>
+
               <li>
-                <button onClick={() => handleSmoothScroll('contact')} className="hover:text-white transition">
-                  {t.links.contact}
+                <button
+                  onClick={() => handleSmoothScroll('contact')}
+                  className="text-white/80 hover:text-white transition"
+                >
+                  {t.contact}
                 </button>
               </li>
             </ul>
           </div>
 
+          {/* Services */}
           <div>
-            <h4 className="text-xl font-bold mb-6">
-              {t.servicesTitle}
+            <h4 className="text-2xl font-bold mb-8 text-white">
+              {t.services}
             </h4>
 
-            <ul className="space-y-3 text-white/70">
-              {t.services.map((service, index) => (
-                <li key={index}>
-                  {service}
-                </li>
-              ))}
+            <ul className="space-y-4 text-lg text-white/80">
+              <li>{t.construction}</li>
+              <li>{t.design}</li>
+              <li>{t.renovation}</li>
+              <li>{t.afterDelivery}</li>
+              <li>{t.commitment}</li>
             </ul>
           </div>
-
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-
-          <p className="text-white/60 text-sm">
+        <div className="border-t border-white/20 mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/70">
             {t.copyright}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-white/60 text-sm">
-            <span>{t.privacy}</span>
-            <span>{t.terms}</span>
-            <span>{t.cookies}</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-white/70">
+            <button
+              onClick={handleScrollToTop}
+              className="hover:text-white transition"
+            >
+              {t.privacy}
+            </button>
+
+            <button
+              onClick={handleScrollToTop}
+              className="hover:text-white transition"
+            >
+              {t.terms}
+            </button>
+
+            <button
+              onClick={handleScrollToTop}
+              className="hover:text-white transition"
+            >
+              {t.cookies}
+            </button>
           </div>
-
         </div>
-
       </div>
     </footer>
   );
