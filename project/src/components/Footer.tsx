@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Footer: React.FC = () => {
@@ -58,6 +58,34 @@ export const Footer: React.FC = () => {
 
   const t = text[language];
 
+  const socialLinks = [
+    {
+      name: 'Facebook',
+      href: '#',
+      icon: Facebook
+    },
+    {
+      name: 'Twitter',
+      href: '#',
+      icon: Twitter
+    },
+    {
+      name: 'Instagram',
+      href: 'https://www.instagram.com/besa_insaat/',
+      icon: Instagram
+    },
+    {
+      name: 'LinkedIn',
+      href: '#',
+      icon: Linkedin
+    },
+    {
+      name: 'YouTube',
+      href: '#',
+      icon: Youtube
+    }
+  ];
+
   const handleSmoothScroll = (id: string) => {
     const section = document.getElementById(id);
 
@@ -82,15 +110,18 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="flex items-center space-x-4">
-              <a
-                href="https://www.instagram.com/besa_insaat/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
