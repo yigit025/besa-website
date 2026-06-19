@@ -1,115 +1,41 @@
-import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
-import { useTheme } from './hooks/useTheme';
-import { useLanguage } from './context/LanguageContext';
+{/* Fixed Contact Buttons */}
+<div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col shadow-xl rounded-l-xl overflow-hidden">
+  <a
+    href={phoneHref}
+    className="flex items-center gap-3 px-5 py-3 bg-black text-white font-semibold hover:bg-neutral-800 transition"
+  >
+    <Phone className="w-5 h-5 text-white" />
+    <span>{t.callButton}</span>
+  </a>
 
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Projects } from './components/Projects';
-import { About } from './components/About';
-import { Services } from './components/Services';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+  <a
+    href={whatsappHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 px-5 py-3 bg-white text-black font-semibold hover:bg-neutral-100 transition border-t border-black/10"
+  >
+    <MessageCircle className="w-5 h-5 text-black" />
+    <span>{t.whatsappButton}</span>
+  </a>
+</div>
 
-function App() {
-  useTheme();
+{/* Mobile Contact Buttons */}
+<div className="fixed bottom-4 left-4 right-4 z-40 flex md:hidden gap-3">
+  <a
+    href={phoneHref}
+    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:bg-neutral-800 transition"
+  >
+    <Phone className="w-5 h-5 text-white" />
+    <span>{t.callButton}</span>
+  </a>
 
-  const { language } = useLanguage();
-
-  const text = {
-    tr: {
-      call: 'Bizi Arayın',
-      whatsapp: 'WhatsApp’tan Ulaşın',
-      whatsappMessage: 'Merhaba, BESA Mimarlık İnşaat projeleri hakkında bilgi almak istiyorum.'
-    },
-    en: {
-      call: 'Call Us',
-      whatsapp: 'Contact via WhatsApp',
-      whatsappMessage: 'Hello, I would like to get information about BESA Mimarlık İnşaat projects.'
-    }
-  };
-
-  const t = text[language];
-
-  const phoneHref = 'tel:+905330169848';
-  const whatsappHref = `https://wa.me/905330169848?text=${encodeURIComponent(t.whatsappMessage)}`;
-
-  return (
-    <>
-      <Header />
-      <Hero />
-      <Projects />
-      <About />
-      <Services />
-      <Contact />
-      <Footer />
-
-      {/* Sabit Butonlar – Responsive */}
-      <div className="fixed z-50">
-
-        {/* Masaüstü görünüm – sağda dikey */}
-        <div className="hidden md:flex fixed right-0 top-1/3 flex-col gap-px pr-2">
-
-          <a
-            href={phoneHref}
-            className="flex items-center gap-2 px-4 py-2 rounded-l-lg shadow-md transition-all hover:scale-105"
-            style={{ backgroundColor: '#D2C1B6', color: '#1B3C53' }}
-            aria-label={t.call}
-          >
-            <Phone size={18} color="#1B3C53" />
-            <span className="text-sm font-semibold">{t.call}</span>
-          </a>
-
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-l-lg shadow-md transition-all hover:scale-105"
-            style={{ backgroundColor: '#F9F3EF', color: '#1B3C53' }}
-            aria-label={t.whatsapp}
-          >
-            <MessageCircle size={18} color="#1B3C53" />
-            <span className="text-sm font-semibold">{t.whatsapp}</span>
-          </a>
-
-        </div>
-
-        {/* Mobil görünüm – altta yatay */}
-        <div
-          className="flex md:hidden fixed bottom-0 left-0 w-full border-t border-gray-200 justify-between items-center z-50"
-          style={{ backgroundColor: '#ffffff' }}
-        >
-
-          <a
-            href={phoneHref}
-            className="flex-1 flex items-center justify-center gap-2 py-3 font-semibold text-sm transition-all border-r border-gray-300"
-            style={{ backgroundColor: '#D2C1B6', color: '#1B3C53' }}
-            aria-label={t.call}
-          >
-            <Phone size={18} color="#1B3C53" />
-            <span>{t.call}</span>
-          </a>
-
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-3 font-semibold text-sm transition-all"
-            style={{ backgroundColor: '#F9F3EF', color: '#1B3C53' }}
-            aria-label={t.whatsapp}
-          >
-            <MessageCircle size={18} color="#1B3C53" />
-            <span>{t.whatsapp}</span>
-          </a>
-
-        </div>
-
-      </div>
-
-      <ScrollToTop />
-    </>
-  );
-}
-
-export default App;
+  <a
+    href={whatsappHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-neutral-100 transition border border-black/10"
+  >
+    <MessageCircle className="w-5 h-5 text-black" />
+    <span>{t.whatsappButton}</span>
+  </a>
+</div>
