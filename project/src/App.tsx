@@ -16,6 +16,7 @@ const App: React.FC = () => {
 
   const { language } = useLanguage();
   const [compactContactButtons, setCompactContactButtons] = useState(false);
+  const [isContactHovered, setIsContactHovered] = useState(false);
 
   const text = {
     tr: {
@@ -70,6 +71,8 @@ const App: React.FC = () => {
     };
   }, []);
 
+  const shouldCollapseContactButtons = compactContactButtons && !isContactHovered;
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -83,8 +86,10 @@ const App: React.FC = () => {
 
       {/* Fixed Contact Buttons - Desktop */}
       <div
+        onMouseEnter={() => setIsContactHovered(true)}
+        onMouseLeave={() => setIsContactHovered(false)}
         className={`fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col w-64 shadow-xl rounded-l-xl overflow-hidden transition-transform duration-500 ease-in-out ${
-          compactContactButtons
+          shouldCollapseContactButtons
             ? 'translate-x-[calc(100%-3.5rem)]'
             : 'translate-x-0'
         }`}
