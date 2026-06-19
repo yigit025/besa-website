@@ -58,40 +58,19 @@ export const Footer: React.FC = () => {
 
   const t = text[language];
 
-  const socialLinks = [
-    {
-      name: 'Facebook',
-      href: '#',
-      icon: Facebook
-    },
-    {
-      name: 'Twitter',
-      href: '#',
-      icon: Twitter
-    },
-    {
-      name: 'Instagram',
-      href: 'https://www.instagram.com/besa_insaat/',
-      icon: Instagram
-    },
-    {
-      name: 'LinkedIn',
-      href: '#',
-      icon: Linkedin
-    },
-    {
-      name: 'YouTube',
-      href: '#',
-      icon: Youtube
-    }
-  ];
-
   const handleSmoothScroll = (id: string) => {
     const section = document.getElementById(id);
 
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -110,18 +89,53 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="flex items-center space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+
+              <button
+                type="button"
+                onClick={handleScrollToTop}
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleScrollToTop}
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </button>
+
+              <a
+                href="https://www.instagram.com/besamimarlikinsaat/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+
+              <button
+                type="button"
+                onClick={handleScrollToTop}
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleScrollToTop}
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </button>
+
             </div>
           </div>
 
