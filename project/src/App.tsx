@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { useTheme } from './hooks/useTheme';
 import { useLanguage } from './context/LanguageContext';
@@ -15,6 +15,7 @@ const App: React.FC = () => {
   useTheme();
 
   const { language } = useLanguage();
+  const [compactContactButtons, setCompactContactButtons] = useState(false);
 
   const text = {
     tr: {
@@ -38,6 +39,37 @@ const App: React.FC = () => {
     t.whatsappMessage
   )}`;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const projectsSection = document.getElementById('projects');
+      const contactSection = document.getElementById('contact');
+
+      if (!projectsSection || !contactSection) {
+        return;
+      }
+
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+      const projectsTop = projectsSection.offsetTop;
+      const contactTop = contactSection.offsetTop;
+
+      if (scrollPosition >= projectsTop && scrollPosition < contactTop) {
+        setCompactContactButtons(true);
+      } else {
+        setCompactContactButtons(false);
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -50,23 +82,39 @@ const App: React.FC = () => {
       <ScrollToTop />
 
       {/* Fixed Contact Buttons - Desktop */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col shadow-xl rounded-l-xl overflow-hidden">
+      <div
+        className={`fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col w-64 shadow-xl rounded-l-xl overflow-hidden transition-transform duration-500 ease-in-out ${
+          compactContactButtons
+            ? 'translate-x-[calc(100%-3.5rem)]'
+            : 'translate-x-0'
+        }`}
+      >
         <a
           href={phoneHref}
-          className="flex items-center gap-3 px-5 py-3 bg-black text-white font-semibold hover:bg-neutral-800 transition"
+          className="h-14 flex items-center gap-3 bg-black text-white font-semibold hover:bg-neutral-800 transition"
         >
-          <Phone className="w-5 h-5 text-white" />
-          <span>{t.callButton}</span>
+          <span className="w-14 h-14 flex items-center justify-center shrink-0">
+            <Phone className="w-5 h-5 text-white" />
+          </span>
+
+          <span className="whitespace-nowrap">
+            {t.callButton}
+          </span>
         </a>
 
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-5 py-3 bg-white text-black font-semibold hover:bg-neutral-100 transition border-t border-black/10"
+          className="h-14 flex items-center gap-3 bg-white text-black font-semibold hover:bg-neutral-100 transition border-t border-black/10"
         >
-          <MessageCircle className="w-5 h-5 text-black" />
-          <span>{t.whatsappButton}</span>
+          <span className="w-14 h-14 flex items-center justify-center shrink-0">
+            <MessageCircle className="w-5 h-5 text-black" />
+          </span>
+
+          <span className="whitespace-nowrap">
+            {t.whatsappButton}
+          </span>
         </a>
       </div>
 
