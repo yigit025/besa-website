@@ -182,7 +182,21 @@ const projects = [
     units: '16 Daire',
     completion: 'Projede',
     description: 'Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor.'
-  }
+  },
+  {
+  id: 11,
+  title: 'BESA Ritim Akçaova 1',
+  location: 'Akçaova, Menteşe, Muğla',
+  images: [
+    'https://i.ibb.co/DfpFd0st/myarchitectai-6i2y5fj0g-sd.png',
+    'https://i.ibb.co/HL5z5LLt/myarchitectai-fs2ttyjae-sd.png',
+    'https://i.ibb.co/93ZG8R1R/bah-ekat-proje.png',
+    'https://i.ibb.co/VYH4SNR8/kat123.png'
+  ],
+  units: '64 Daire',
+  completion: 'Projede',
+  description: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.'
+}
 ];
 
 export const Projects: React.FC = () => {
