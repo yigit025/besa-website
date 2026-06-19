@@ -105,7 +105,7 @@ export const Contact: React.FC = () => {
                   </h4>
 
                   <p className="text-besa-dark/70">
-                    info@besamimarlikinsaat.com
+                    infobesainsaat@gmail.com
                   </p>
                 </div>
               </div>
