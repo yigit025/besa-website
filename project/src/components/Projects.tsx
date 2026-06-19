@@ -65,7 +65,7 @@ const projects = [
     },
     description: {
       tr: 'Panoramik orman manzaralı ve premium olanaklara sahip modern konut kompleksi.',
-      en: 'A modern residential complex with panoramic forest views and premium amenities.'
+      en: 'A contemporary residential project offering panoramic forest views, refined architectural details, and premium living comfort.'
     }
   },
   {
@@ -88,7 +88,7 @@ const projects = [
     },
     description: {
       tr: 'Şehrin kalbinde sofistike şehir yaşamı sunan lüks villalar.',
-      en: 'Luxury villas offering a sophisticated lifestyle in the heart of the city.'
+      en: 'An exclusive villa project offering elegant living spaces and a refined lifestyle in a peaceful setting.'
     }
   },
   {
@@ -111,7 +111,7 @@ const projects = [
     },
     description: {
       tr: 'Aile yaşamına uygun, sosyal alanlarla çevrili butik bir apartman projesi. Metroya 5 dakika, huzura bir adım.',
-      en: 'A boutique apartment project designed for family living, surrounded by social areas. Five minutes from the metro, one step closer to peace.'
+      en: 'A boutique apartment project designed for comfortable family living, surrounded by social areas and located just minutes from the metro.'
     }
   },
   {
@@ -136,7 +136,7 @@ const projects = [
     },
     description: {
       tr: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.',
-      en: 'BESA Residence Olea was designed with the promise of a safe life for children, a peaceful life for families, and a sustainable lifestyle for everyone.'
+      en: 'BESA Residence Olea is designed to offer a safe environment for children, a peaceful lifestyle for families, and a sustainable living experience for everyone.'
     }
   },
   {
@@ -159,7 +159,7 @@ const projects = [
     },
     description: {
       tr: 'Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı.',
-      en: 'A modern living space offering an independent lifestyle surrounded by nature.'
+      en: 'A modern residential project offering an independent lifestyle in harmony with nature.'
     }
   },
   {
@@ -182,7 +182,7 @@ const projects = [
     },
     description: {
       tr: 'Ege esintili mimarisiyle dikkat çeken özel apartman projesi.',
-      en: 'A distinctive apartment project standing out with its Aegean-inspired architecture.'
+      en: 'A distinctive apartment project that stands out with its Aegean-inspired architectural character.'
     }
   },
   {
@@ -206,7 +206,7 @@ const projects = [
     },
     description: {
       tr: 'Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar.',
-      en: 'A boutique project consisting of only two villas, offering peace, privacy, and a life surrounded by nature.'
+      en: 'A boutique project consisting of only two villas, offering privacy, comfort, and a peaceful lifestyle surrounded by nature.'
     }
   },
   {
@@ -228,7 +228,7 @@ const projects = [
     },
     description: {
       tr: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.',
-      en: 'Reflecting the natural spirit of the Aegean, this special project was designed with a private pool villa, rich landscaping, and living spaces that offer maximum privacy.'
+      en: 'Reflecting the natural spirit of the Aegean, this exclusive villa project features a private pool, rich landscaping, and living spaces designed for maximum privacy.'
     }
   },
   {
@@ -246,11 +246,11 @@ const projects = [
     },
     completion: {
       tr: 'Projede',
-      en: 'Under Development'
+      en: 'Under Construction'
     },
     description: {
       tr: 'Modern mimarisi ve peyzajlı ortak alanlarıyla BESA Nova, konforlu yaşamın yeni adresi. Şehirle iç içe ama doğadan kopmayan özel bir site deneyimi sunar.',
-      en: 'With its modern architecture and landscaped common areas, BESA Nova is the new address of comfortable living. It offers a special residential experience close to the city yet connected to nature.'
+      en: 'With its modern architecture and landscaped communal areas, BESA Nova offers a comfortable residential experience close to the city while remaining connected to nature.'
     }
   },
   {
@@ -267,11 +267,11 @@ const projects = [
     },
     completion: {
       tr: 'Projede',
-      en: 'Under Development'
+      en: 'Under Construction'
     },
     description: {
       tr: 'Geniş cam cepheler ve şık balkon detaylarıyla modern şehir mimarisinin güçlü bir temsilcisi. BESA farkıyla yükseliyor.',
-      en: 'A strong example of modern urban architecture with wide glass façades and elegant balcony details. Rising with the BESA difference.'
+      en: 'A strong example of modern urban architecture, distinguished by wide glass façades and elegant balcony details. Rising with the BESA difference.'
     }
   },
   {
@@ -290,11 +290,11 @@ const projects = [
     },
     completion: {
       tr: 'Projede',
-      en: 'Under Development'
+      en: 'Under Construction'
     },
     description: {
       tr: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.',
-      en: 'Combining the comfort of apartment living with the privilege of garden use, this project offers an exclusive lifestyle. It stands out with its modern architecture and private living spaces.'
+      en: 'Combining the comfort of apartment living with the privilege of garden use, this project offers an exclusive lifestyle with modern architecture and private living spaces.'
     }
   },
   {
@@ -313,11 +313,11 @@ const projects = [
     },
     completion: {
       tr: 'Projede',
-      en: 'Under Development'
+      en: 'Under Construction'
     },
     description: {
       tr: 'Gün ışığından maksimum verim alacak şekilde tasarlanan Ritim Akçaova 2, yaşamınızın her anında konforu ve ferahlığı hissetmeniz için hayata geçirildi. Modern mimari anlayışıyla yükselen projede; 4 katlı A ve B bloklarda odalarınızı süsleyecek doğa manzarası sizleri karşılıyor.',
-      en: 'Designed to make maximum use of daylight, Ritim Akçaova 2 was brought to life so you can feel comfort and spaciousness in every moment of your life. Rising with a modern architectural approach, the project welcomes you with nature views from the rooms in its 4-storey A and B blocks.'
+      en: 'Designed to make the most of natural daylight, Ritim Akçaova 2 offers comfort and spaciousness throughout daily life. Rising with a modern architectural approach, the project welcomes residents with nature views from the rooms in its four-storey A and B blocks.'
     }
   }
 ];
@@ -332,16 +332,16 @@ export const Projects: React.FC = () => {
       title: 'Projelerimiz',
       subtitle:
         'BESA’nın yaşam alanları sadece binalar değil; modern hayatın yeniden tasarlanmış hâlidir.',
-      delivery: 'Teslim',
+      completion: 'Teslim',
       seeMore: 'Daha Fazlasını Gör',
       seeLess: 'Daha Azını Göster'
     },
     en: {
       title: 'Our Projects',
       subtitle:
-        'BESA living spaces are not just buildings; they are a reimagined version of modern life.',
-      delivery: 'Delivery',
-      seeMore: 'See More',
+        'BESA creates more than buildings; it designs refined living spaces for modern life.',
+      completion: 'Completion',
+      seeMore: 'View More',
       seeLess: 'Show Less'
     }
   };
@@ -418,7 +418,7 @@ export const Projects: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <Calendar className="w-4 h-4" />
                       <span>
-                        {t.delivery}: {project.completion[language]}
+                        {t.completion}: {project.completion[language]}
                       </span>
                     </div>
                   </div>
