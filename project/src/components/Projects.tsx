@@ -196,6 +196,20 @@ const projects = [
   units: '64 Daire',
   completion: 'Projede',
   description: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.'
+},
+  {
+  id: 12,
+  title: 'BESA Ritim Akçaova 2',
+  location: 'Akçaova, Menteşe, Muğla',
+  images: [
+    'https://i.ibb.co/fdM3dpfY/MG-5208.jpg',
+    'https://i.ibb.co/sGPb8KB/MG-5210.jpg',
+    'https://i.ibb.co/nqSb69jT/bah-ekat.png',
+    'https://i.ibb.co/4wZj1FWm/kat123.png'
+  ],
+  units: '32 Daire',
+  completion: 'Projede',
+  description: 'Gün ışığından maksimum verim alacak şekilde tasarlanan Ritim Akçaova 2, yaşamınızın her anında konforu ve ferahlığı hissetmeniz için hayata geçirildi. Modern mimari anlayışıyla yükselen projede; 4 katlı A ve B bloklarda odalarınızı süsleyecek doğa manzarası sizleri karşılıyor.'
 }
 ];
 
