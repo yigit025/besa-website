@@ -43,11 +43,26 @@ export const Header: React.FC = () => {
               <Search className="w-5 h-5 text-besa-dark" />
             </button>
 
-            {/* Language selector */}
-            <select className="text-sm font-bold text-besa-dark bg-transparent focus:outline-none cursor-pointer">
-              <option value="tr">🇹🇷 TR</option>
-              <option value="en">🇬🇧 EN</option>
-            </select>
+            {/* Language buttons mobile */}
+            <div className="flex items-center space-x-2">
+              <button className="flex items-center space-x-1 text-xs font-bold text-besa-dark">
+                <img
+                  src="https://flagcdn.com/w20/tr.png"
+                  alt="Türkçe"
+                  className="w-5 h-auto rounded-sm"
+                />
+                <span>TR</span>
+              </button>
+
+              <button className="flex items-center space-x-1 text-xs font-bold text-besa-dark">
+                <img
+                  src="https://flagcdn.com/w20/gb.png"
+                  alt="English"
+                  className="w-5 h-auto rounded-sm"
+                />
+                <span>EN</span>
+              </button>
+            </div>
 
             {/* Mobile menu toggle */}
             <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -70,10 +85,26 @@ export const Header: React.FC = () => {
 
             <div className="h-5 w-px bg-besa-dark/20"></div>
 
-            <select className="text-sm font-bold text-besa-dark bg-transparent border border-besa-dark/20 rounded-full px-3 py-1 focus:outline-none cursor-pointer">
-              <option value="tr">🇹🇷 TR</option>
-              <option value="en">🇬🇧 EN</option>
-            </select>
+            {/* Language buttons desktop */}
+            <div className="flex items-center space-x-2">
+              <button className="flex items-center space-x-1 text-sm font-bold text-besa-dark border border-besa-dark/20 rounded-full px-3 py-1 hover:bg-besa-dark/5 transition">
+                <img
+                  src="https://flagcdn.com/w20/tr.png"
+                  alt="Türkçe"
+                  className="w-5 h-auto rounded-sm"
+                />
+                <span>TR</span>
+              </button>
+
+              <button className="flex items-center space-x-1 text-sm font-bold text-besa-dark border border-besa-dark/20 rounded-full px-3 py-1 hover:bg-besa-dark/5 transition">
+                <img
+                  src="https://flagcdn.com/w20/gb.png"
+                  alt="English"
+                  className="w-5 h-auto rounded-sm"
+                />
+                <span>EN</span>
+              </button>
+            </div>
 
           </div>
         </div>
