@@ -111,7 +111,7 @@ export const Header: React.FC = () => {
 
             <div className="flex items-center space-x-2 text-sm text-besa-dark/70">
               <Mail className="w-4 h-4" />
-              <span className="font-semibold">info@besainsaat.net</span>
+              <span className="font-semibold">infobesainsaat@gmail.com</span>
             </div>
 
             <div className="h-5 w-px bg-besa-dark/20"></div>
