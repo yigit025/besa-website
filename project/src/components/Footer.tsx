@@ -1,69 +1,163 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Instagram } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Footer: React.FC = () => {
+  const { language } = useLanguage();
+
+  const text = {
+    tr: {
+      description:
+        'Her ayrıntısı özenle düşünülmüş, zamansız bir yaşam deneyimi sunan projeler geliştiriyoruz. BESA İnşaat, lüks ve konforu bir araya getirerek sizi sadece bir eve değil, hayalini kurduğunuz yaşama davet ediyor.',
+      quickLinksTitle: 'Hızlı Bağlantılar',
+      servicesTitle: 'Hizmetler',
+      links: {
+        home: 'Ana Sayfa',
+        projects: 'Projeler',
+        about: 'Hakkımızda',
+        services: 'Hizmetler',
+        contact: 'İletişim'
+      },
+      services: [
+        'Yapı ve İnşaat',
+        'Proje Tasarımı',
+        'Uygulama & Tadilat',
+        'Teslim Sonrası Hizmet',
+        'Taahhüt'
+      ],
+      copyright: '© 2025 BESA İnşaat. Tüm hakları saklıdır.',
+      privacy: 'Gizlilik Politikası',
+      terms: 'Hizmet Şartları',
+      cookies: 'Çerez Politikası'
+    },
+    en: {
+      description:
+        'We develop thoughtfully designed projects that offer a timeless living experience. BESA İnşaat brings luxury and comfort together, inviting you not only to a home, but to the lifestyle you have envisioned.',
+      quickLinksTitle: 'Quick Links',
+      servicesTitle: 'Services',
+      links: {
+        home: 'Home',
+        projects: 'Projects',
+        about: 'About Us',
+        services: 'Services',
+        contact: 'Contact'
+      },
+      services: [
+        'Construction & Building',
+        'Project Design',
+        'Implementation & Renovation',
+        'After-Delivery Support',
+        'Contracting'
+      ],
+      copyright: '© 2025 BESA İnşaat. All rights reserved.',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service',
+      cookies: 'Cookie Policy'
+    }
+  };
+
+  const t = text[language];
+
+  const handleSmoothScroll = (id: string) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="bg-besa-dark text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="col-span-1 lg:col-span-2">
-            <div className="text-3xl font-bold mb-4">
-              <span className="text-besa-beige">BESA</span>
-            </div>
-            <p className="text-besa-beige/70 mb-6 max-w-md">
-              Her ayrıntısı özenle düşünülmüş, zamansız bir yaşam deneyimi sunan projeler geliştiriyoruz. 
-			  BESA İnşaat, lüks ve konforu bir araya getirerek, sizi sadece bir eve değil, hayalini kurduğunuz yaşama davet ediyor.
+    <footer className="bg-besa-dark text-white py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+          <div>
+            <h3 className="text-3xl font-bold mb-6">
+              BESA
+            </h3>
+
+            <p className="text-white/70 leading-relaxed mb-6">
+              {t.description}
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-besa-blue/20 p-2 rounded-lg hover:bg-besa-blue transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="bg-besa-blue/20 p-2 rounded-lg hover:bg-besa-blue transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://www.instagram.com/besainsaatt/" className="bg-besa-blue/20 p-2 rounded-lg hover:bg-besa-blue transition-colors">
+
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://www.instagram.com/besa_insaat/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
+                aria-label="Instagram"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-besa-blue/20 p-2 rounded-lg hover:bg-besa-blue transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="bg-besa-blue/20 p-2 rounded-lg hover:bg-besa-blue transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
             </div>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">Hızlı Bağlantılar</h3>
-            <ul className="space-y-2 text-besa-beige/70">
-              <li><a href="#home" className="hover:text-white transition-colors">Ana Sayfa</a></li>
-              <li><a href="#projects" className="hover:text-white transition-colors">Projeler</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">Hakkımızda</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Hizmetler</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">İletişim</a></li>
+            <h4 className="text-xl font-bold mb-6">
+              {t.quickLinksTitle}
+            </h4>
+
+            <ul className="space-y-3 text-white/70">
+              <li>
+                <button onClick={() => handleSmoothScroll('home')} className="hover:text-white transition">
+                  {t.links.home}
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleSmoothScroll('projects')} className="hover:text-white transition">
+                  {t.links.projects}
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleSmoothScroll('about')} className="hover:text-white transition">
+                  {t.links.about}
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleSmoothScroll('services')} className="hover:text-white transition">
+                  {t.links.services}
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleSmoothScroll('contact')} className="hover:text-white transition">
+                  {t.links.contact}
+                </button>
+              </li>
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">Hizmetler</h3>
-            <ul className="space-y-2 text-besa-beige/70">
-              <li><a href="#" className="hover:text-white transition-colors">Yapı ve İnşaat</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Proje Tasarımı</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Uygulama & Tadilat</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Teslim Sonrası Hizmet</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Taahhüt</a></li>
+            <h4 className="text-xl font-bold mb-6">
+              {t.servicesTitle}
+            </h4>
+
+            <ul className="space-y-3 text-white/70">
+              {t.services.map((service, index) => (
+                <li key={index}>
+                  {service}
+                </li>
+              ))}
             </ul>
           </div>
+
         </div>
-        
-        <div className="border-t border-besa-blue/30 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-besa-beige/70">© 2025 BESA İnşaat. Tüm hakları saklıdır.</p>
-          <div className="flex space-x-6 mt-4 sm:mt-0">
-            <a href="#" className="text-besa-beige/70 hover:text-white transition-colors text-sm">Gizlilik Politikası</a>
-            <a href="#" className="text-besa-beige/70 hover:text-white transition-colors text-sm">Hizmet Şartları</a>
-            <a href="#" className="text-besa-beige/70 hover:text-white transition-colors text-sm">Çerez Politikası</a>
+
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+
+          <p className="text-white/60 text-sm">
+            {t.copyright}
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 text-white/60 text-sm">
+            <span>{t.privacy}</span>
+            <span>{t.terms}</span>
+            <span>{t.cookies}</span>
           </div>
+
         </div>
+
       </div>
     </footer>
   );
