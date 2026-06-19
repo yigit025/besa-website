@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import React, { useEffect, useState } from 'react';
-import { Menu, X, Phone, Mail, Search } from 'lucide-react';
+import { Menu, X, Phone, Mail, Search, Instagram } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Header: React.FC = () => {
@@ -65,38 +64,23 @@ export const Header: React.FC = () => {
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center space-x-6">
               <nav className="flex space-x-6 text-sm font-bold text-white">
-                <button
-                  onClick={() => handleSmoothScroll('home')}
-                  className="hover:text-besa-beige transition-colors"
-                >
+                <button onClick={() => handleSmoothScroll('home')} className="hover:text-besa-beige transition-colors">
                   {t.home}
                 </button>
 
-                <button
-                  onClick={() => handleSmoothScroll('projects')}
-                  className="hover:text-besa-beige transition-colors"
-                >
+                <button onClick={() => handleSmoothScroll('projects')} className="hover:text-besa-beige transition-colors">
                   {t.projects}
                 </button>
 
-                <button
-                  onClick={() => handleSmoothScroll('about')}
-                  className="hover:text-besa-beige transition-colors"
-                >
+                <button onClick={() => handleSmoothScroll('about')} className="hover:text-besa-beige transition-colors">
                   {t.about}
                 </button>
 
-                <button
-                  onClick={() => handleSmoothScroll('services')}
-                  className="hover:text-besa-beige transition-colors"
-                >
+                <button onClick={() => handleSmoothScroll('services')} className="hover:text-besa-beige transition-colors">
                   {t.services}
                 </button>
 
-                <button
-                  onClick={() => handleSmoothScroll('contact')}
-                  className="hover:text-besa-beige transition-colors"
-                >
+                <button onClick={() => handleSmoothScroll('contact')} className="hover:text-besa-beige transition-colors">
                   {t.contact}
                 </button>
               </nav>
@@ -104,7 +88,6 @@ export const Header: React.FC = () => {
 
             {/* MOBILE RIGHT SIDE */}
             <div className="flex items-center space-x-4 lg:hidden">
-
               <button className="p-1">
                 <Search className="w-5 h-5 text-white" />
               </button>
@@ -150,7 +133,6 @@ export const Header: React.FC = () => {
 
             {/* DESKTOP CONTACT + LANGUAGE */}
             <div className="hidden lg:flex items-center space-x-4">
-
               <div className="flex items-center space-x-2 text-sm text-white/80">
                 <Phone className="w-4 h-4" />
                 <span className="font-semibold">+90 533 016 98 48</span>
@@ -192,7 +174,6 @@ export const Header: React.FC = () => {
                   <span>EN</span>
                 </button>
               </div>
-
             </div>
           </div>
         </div>
@@ -268,13 +249,31 @@ export const Header: React.FC = () => {
             BESA Mimarlık İnşaat
           </div>
 
-          <div className="text-sm text-white/80">
-            +90 533 016 98 48
-          </div>
+          <a
+            href="tel:+905330169848"
+            className="flex items-center gap-2 text-sm text-white/80 hover:text-white transition"
+          >
+            <Phone className="w-4 h-4" />
+            <span>+90 533 016 98 48</span>
+          </a>
 
-          <div className="text-sm text-white/80 mt-1 break-all">
-            infobesainsaat@gmail.com
-          </div>
+          <a
+            href="mailto:infobesainsaat@gmail.com"
+            className="mt-2 flex items-center gap-2 text-sm text-white/80 hover:text-white transition break-all"
+          >
+            <Mail className="w-4 h-4 shrink-0" />
+            <span>infobesainsaat@gmail.com</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/besamimarlikinsaat/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 flex items-center gap-2 text-white font-semibold hover:text-besa-beige transition"
+          >
+            <Instagram className="w-5 h-5" />
+            <span>@besamimarlikinsaat</span>
+          </a>
         </div>
       </aside>
     </>
