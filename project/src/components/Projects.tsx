@@ -33,25 +33,94 @@ const Slider: React.FC<{
   onImageClick: (index: number) => void;
 }> = ({ images, onImageClick }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const isSwiping = useRef(false);
+
+  const goPrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const goNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    goPrev();
   };
 
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    goNext();
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = null;
+    isSwiping.current = false;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+
+    if (
+      touchStartX.current !== null &&
+      Math.abs(touchStartX.current - touchEndX.current) > 10
+    ) {
+      isSwiping.current = true;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) {
+      touchStartX.current = null;
+      touchEndX.current = null;
+      return;
+    }
+
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > 0) {
+        goNext();
+      } else {
+        goPrev();
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+
+    setTimeout(() => {
+      isSwiping.current = false;
+    }, 250);
+  };
+
+  const handleImageClick = (e: React.MouseEvent) => {
+    if (isSwiping.current) {
+      e.preventDefault();
+      return;
+    }
+
+    onImageClick(currentIndex);
   };
 
   return (
-    <div className="relative h-64 bg-gray-100 overflow-hidden">
+    <div
+      className="relative h-64 bg-gray-100 overflow-hidden touch-pan-y"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <img
         key={currentIndex}
         src={images[currentIndex]}
         alt={`slide-${currentIndex}`}
-        onClick={() => onImageClick(currentIndex)}
-        className="w-full h-64 object-cover transition-all duration-300 ease-in-out cursor-zoom-in"
+        onClick={handleImageClick}
+        className="w-full h-64 object-cover transition-all duration-300 ease-in-out cursor-zoom-in select-none"
+        draggable={false}
       />
 
       {images.length > 1 && (
