@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { useTheme } from './hooks/useTheme';
 import { useLanguage } from './context/LanguageContext';
@@ -7,7 +8,6 @@ import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Services } from './components/Services';
-import { Analytics } from '@vercel/analytics/react';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -31,6 +31,12 @@ const App: React.FC = () => {
       whatsappButton: 'Contact via WhatsApp',
       whatsappMessage:
         'Hello, I would like to get information about BESA Mimarlık İnşaat projects.'
+    },
+    ru: {
+      callButton: 'Позвонить',
+      whatsappButton: 'Связаться в WhatsApp',
+      whatsappMessage:
+        'Здравствуйте, я хотел(а) бы получить информацию о проектах BESA Mimarlık İnşaat.'
     }
   };
 
