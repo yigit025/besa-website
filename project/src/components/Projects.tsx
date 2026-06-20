@@ -224,48 +224,6 @@ const projects: Project[] = [
     }
   },
   {
-    id: 13,
-    status: 'development',
-    title: 'BESA Villa Calista',
-    location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/tTxMQ9SM/BESA.png'
-    ],
-    units: {
-      tr: '2 Villa',
-      en: '2 Villas'
-    },
-    completion: {
-      tr: 'Geliştirilmekte',
-      en: 'Under Development'
-    },
-    description: {
-      tr: 'BESA Villa Calista, modern mimari çizgileri ve seçkin yaşam anlayışıyla geliştirilmekte olan özel bir villa projesidir.',
-      en: 'BESA Villa Calista is an exclusive villa project under development, designed with modern architectural lines and a refined lifestyle concept.'
-    }
-  },
-  {
-    id: 14,
-    status: 'development',
-    title: 'BESA Nova',
-    location: 'Dalaman, Muğla',
-    images: [
-      'https://i.ibb.co/GvGspcMC/BESA-1.png'
-    ],
-    units: {
-      tr: '2 Villa',
-      en: '2 Villas'
-    },
-    completion: {
-      tr: 'Geliştirilmekte',
-      en: 'Under Development'
-    },
-    description: {
-      tr: 'BESA Nova, çağdaş mimarisi, ferah yaşam alanları ve estetik yaklaşımıyla geliştirilmekte olan butik bir villa projesidir.',
-      en: 'BESA Nova is a boutique villa project under development, featuring contemporary architecture, spacious living areas, and an elegant design approach.'
-    }
-  },
-  {
     id: 2,
     status: 'completed',
     title: 'BESA Masal Bahçe Evleri',
@@ -432,6 +390,48 @@ const projects: Project[] = [
     description: {
       tr: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.',
       en: 'Reflecting the natural spirit of the Aegean, this exclusive villa project features a private pool, rich landscaping, and living spaces designed for maximum privacy.'
+    }
+  },
+  {
+    id: 13,
+    status: 'development',
+    title: 'BESA Villa Calista',
+    location: 'Dalaman, Muğla',
+    images: [
+      'https://i.ibb.co/tTxMQ9SM/BESA.png'
+    ],
+    units: {
+      tr: '2 Villa',
+      en: '2 Villas'
+    },
+    completion: {
+      tr: 'Geliştirilmekte',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'BESA Villa Calista, modern mimari çizgileri ve seçkin yaşam anlayışıyla geliştirilmekte olan özel bir villa projesidir.',
+      en: 'BESA Villa Calista is an exclusive villa project under development, designed with modern architectural lines and a refined lifestyle concept.'
+    }
+  },
+  {
+    id: 14,
+    status: 'development',
+    title: 'BESA Nova',
+    location: 'Dalaman, Muğla',
+    images: [
+      'https://i.ibb.co/GvGspcMC/BESA-1.png'
+    ],
+    units: {
+      tr: '2 Villa',
+      en: '2 Villas'
+    },
+    completion: {
+      tr: 'Geliştirilmekte',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'BESA Nova, çağdaş mimarisi, ferah yaşam alanları ve estetik yaklaşımıyla geliştirilmekte olan butik bir villa projesidir.',
+      en: 'BESA Nova is a boutique villa project under development, featuring contemporary architecture, spacious living areas, and an elegant design approach.'
     }
   }
 ];
