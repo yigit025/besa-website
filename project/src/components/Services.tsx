@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Building2, Wrench, HeadphonesIcon } from 'lucide-react';
+import { Building2, PenTool, Hammer, Headphones } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Services: React.FC = () => {
@@ -9,62 +9,93 @@ export const Services: React.FC = () => {
     tr: {
       title: 'Hizmetlerimiz',
       subtitle:
-        'Konsept aşamasından teslim sürecine kadar tüm adımlarda yanınızda olan bütüncül çözümler sunuyoruz.',
+        'BESA Mimarlık İnşaat olarak, fikir aşamasından teslim sonrasına kadar her adımda güvenilir ve kaliteli çözümler sunuyoruz.',
       services: [
         {
-          icon: Home,
+          icon: Building2,
           title: 'Yapı ve İnşaat',
           description:
-            'Temelden çatıya kadar tüm inşaat süreçlerinde kalite, sağlamlık ve güven önceliğimizdir.'
+            'Modern teknikler, kaliteli malzemeler ve güvenilir uygulama süreçleriyle uzun ömürlü yapılar inşa ediyoruz.'
         },
         {
-          icon: Building2,
+          icon: PenTool,
           title: 'Proje Tasarımı',
           description:
-            'Mimari planlamadan teknik çizimlere kadar, her detay işlevsellik ve estetikle şekillendirilir.'
+            'İhtiyaca uygun, estetik ve fonksiyonel mimari çözümler geliştirerek yaşam alanlarını doğru şekilde planlıyoruz.'
         },
         {
-          icon: Wrench,
+          icon: Hammer,
           title: 'Uygulama & Tadilat',
           description:
-            'İç ve dış uygulamalarda modern malzemelerle yenilikçi çözümler sunuyoruz.'
+            'Mevcut alanları yeniliyor, modern ve kullanışlı yaşam alanlarına dönüştürüyoruz.'
         },
         {
-          icon: HeadphonesIcon,
+          icon: Headphones,
           title: 'Teslim Sonrası Hizmet',
           description:
-            'Teslim sonrası süreçte bakım, onarım ve destek hizmetlerimizle her zaman yanınızdayız.'
+            'Proje tesliminden sonra da müşterilerimizin yanında oluyor, ihtiyaç duyulan süreçlerde destek sağlıyoruz.'
         }
       ]
     },
     en: {
       title: 'Our Services',
       subtitle:
-        'We provide comprehensive solutions at every stage, from concept development to project delivery.',
+        'At BESA Mimarlık İnşaat, we provide reliable and high-quality solutions at every stage, from concept to after-delivery support.',
       services: [
         {
-          icon: Home,
+          icon: Building2,
           title: 'Construction & Building',
           description:
-            'From foundation to completion, quality, durability, and trust are our priorities throughout every construction process.'
+            'We build long-lasting structures with modern techniques, quality materials, and reliable implementation processes.'
         },
         {
-          icon: Building2,
+          icon: PenTool,
           title: 'Project Design',
           description:
-            'From architectural planning to technical drawings, every detail is shaped with functionality and aesthetics in mind.'
+            'We plan living spaces correctly by developing aesthetic, functional, and need-oriented architectural solutions.'
         },
         {
-          icon: Wrench,
+          icon: Hammer,
           title: 'Implementation & Renovation',
           description:
-            'We deliver innovative solutions for interior and exterior applications using modern materials and refined workmanship.'
+            'We renovate existing spaces and transform them into modern, practical, and comfortable living areas.'
         },
         {
-          icon: HeadphonesIcon,
+          icon: Headphones,
           title: 'After-Delivery Support',
           description:
-            'We remain by your side after delivery with maintenance, repair, and support services whenever needed.'
+            'We continue to support our clients after project delivery and provide assistance whenever needed.'
+        }
+      ]
+    },
+    ru: {
+      title: 'Наши услуги',
+      subtitle:
+        'BESA Mimarlık İnşaat предлагает надежные и качественные решения на каждом этапе — от идеи проекта до поддержки после сдачи.',
+      services: [
+        {
+          icon: Building2,
+          title: 'Строительство',
+          description:
+            'Мы строим долговечные объекты, используя современные технологии, качественные материалы и надежные процессы реализации.'
+        },
+        {
+          icon: PenTool,
+          title: 'Проектирование',
+          description:
+            'Мы разрабатываем эстетичные, функциональные и ориентированные на потребности архитектурные решения.'
+        },
+        {
+          icon: Hammer,
+          title: 'Реализация и ремонт',
+          description:
+            'Мы обновляем существующие пространства и превращаем их в современные, удобные и комфортные жилые зоны.'
+        },
+        {
+          icon: Headphones,
+          title: 'Поддержка после сдачи',
+          description:
+            'Мы остаемся рядом с клиентами после сдачи проекта и оказываем поддержку при необходимости.'
         }
       ]
     }
@@ -76,37 +107,40 @@ export const Services: React.FC = () => {
     <section id="services" className="py-20 bg-besa-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <h2 className="text-4xl sm:text-5xl font-bold text-besa-dark mb-4">
             {t.title}
           </h2>
 
-          <p className="text-xl text-besa-dark/70 max-w-2xl mx-auto">
+          <p className="text-xl text-besa-dark/70 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {t.services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] text-center"
-            >
-              <div className="bg-besa-beige/50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <service.icon className="w-8 h-8 text-besa-blue" />
+          {t.services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-7 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="w-14 h-14 bg-black text-white rounded-2xl flex items-center justify-center mb-6">
+                  <Icon className="w-7 h-7" />
+                </div>
+
+                <h3 className="text-xl font-bold text-besa-dark mb-4">
+                  {service.title}
+                </h3>
+
+                <p className="text-besa-dark/70 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-
-              <h3 className="text-xl font-bold text-besa-dark mb-4">
-                {service.title}
-              </h3>
-
-              <p className="text-besa-dark/70 leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
-
       </div>
     </section>
   );
