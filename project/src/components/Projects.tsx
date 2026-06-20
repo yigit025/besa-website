@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MapPin, Home, Calendar, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-type ProjectStatus = 'ongoing' | 'completed';
-type FilterType = 'all' | 'ongoing' | 'completed';
+type ProjectStatus = 'ongoing' | 'completed' | 'development';
+type FilterType = 'all' | 'ongoing' | 'completed' | 'development';
 
 type LanguageText = {
   tr: string;
@@ -224,6 +224,48 @@ const projects: Project[] = [
     }
   },
   {
+    id: 13,
+    status: 'development',
+    title: 'BESA Villa Calista',
+    location: 'Dalaman, Muğla',
+    images: [
+      'https://i.ibb.co/tTxMQ9SM/BESA.png'
+    ],
+    units: {
+      tr: '2 Villa',
+      en: '2 Villas'
+    },
+    completion: {
+      tr: 'Geliştirilmekte',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'BESA Villa Calista, modern mimari çizgileri ve seçkin yaşam anlayışıyla geliştirilmekte olan özel bir villa projesidir.',
+      en: 'BESA Villa Calista is an exclusive villa project under development, designed with modern architectural lines and a refined lifestyle concept.'
+    }
+  },
+  {
+    id: 14,
+    status: 'development',
+    title: 'BESA Nova',
+    location: 'Dalaman, Muğla',
+    images: [
+      'https://i.ibb.co/GvGspcMC/BESA-1.png'
+    ],
+    units: {
+      tr: '2 Villa',
+      en: '2 Villas'
+    },
+    completion: {
+      tr: 'Geliştirilmekte',
+      en: 'Under Development'
+    },
+    description: {
+      tr: 'BESA Nova, çağdaş mimarisi, ferah yaşam alanları ve estetik yaklaşımıyla geliştirilmekte olan butik bir villa projesidir.',
+      en: 'BESA Nova is a boutique villa project under development, featuring contemporary architecture, spacious living areas, and an elegant design approach.'
+    }
+  },
+  {
     id: 2,
     status: 'completed',
     title: 'BESA Masal Bahçe Evleri',
@@ -412,7 +454,8 @@ export const Projects: React.FC = () => {
       filters: {
         all: 'Hepsi',
         ongoing: 'Devam Eden',
-        completed: 'Tamamlanmış'
+        completed: 'Tamamlanmış',
+        development: 'Geliştirilmekte Olan Projeler'
       }
     },
     en: {
@@ -425,7 +468,8 @@ export const Projects: React.FC = () => {
       filters: {
         all: 'All',
         ongoing: 'Ongoing',
-        completed: 'Completed'
+        completed: 'Completed',
+        development: 'Projects Under Development'
       }
     }
   };
@@ -566,6 +610,13 @@ export const Projects: React.FC = () => {
             className={filterButtonClass('completed')}
           >
             {t.filters.completed}
+          </button>
+
+          <button
+            onClick={() => handleFilterChange('development')}
+            className={filterButtonClass('development')}
+          >
+            {t.filters.development}
           </button>
         </div>
 
