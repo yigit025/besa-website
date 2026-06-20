@@ -89,42 +89,42 @@ export const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-14">
+        <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-besa-dark mb-4">
             {t.title}
           </h2>
 
-          <p className="text-xl text-besa-dark/70 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-besa-dark/70 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {contactItems.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={index}
-                className="bg-besa-cream rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="bg-besa-cream rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full"
               >
-                <div className="w-14 h-14 bg-black text-white rounded-2xl flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7" />
+                <div className="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-5">
+                  <Icon className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-besa-dark mb-4">
+                <h3 className="text-xl font-bold text-besa-dark mb-3">
                   {item.title}
                 </h3>
 
                 {Array.isArray(item.content) ? (
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     {item.content.map((line, lineIndex) => (
                       <p
                         key={lineIndex}
-                        className="text-besa-dark/70 leading-relaxed"
+                        className="text-sm text-besa-dark/70 leading-relaxed"
                       >
                         {line}
                       </p>
@@ -133,12 +133,12 @@ export const Contact: React.FC = () => {
                 ) : item.href ? (
                   <a
                     href={item.href}
-                    className="text-besa-dark/70 hover:text-black transition font-semibold break-all"
+                    className="text-sm text-besa-dark/70 hover:text-black transition font-semibold break-all"
                   >
                     {item.content}
                   </a>
                 ) : (
-                  <p className="text-besa-dark/70 leading-relaxed">
+                  <p className="text-sm text-besa-dark/70 leading-relaxed">
                     {item.content}
                   </p>
                 )}
