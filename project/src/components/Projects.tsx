@@ -8,6 +8,7 @@ type FilterType = 'all' | 'ongoing' | 'completed' | 'development';
 type LanguageText = {
   tr: string;
   en: string;
+  ru: string;
 };
 
 type Project = {
@@ -159,15 +160,18 @@ const projects: Project[] = [
     catalogUrl: '/catalogs/besa-ritim-akcaova-1.pdf',
     units: {
       tr: '64 Daire',
-      en: '64 Apartments'
+      en: '64 Apartments',
+      ru: '64 квартиры'
     },
     completion: {
       tr: 'Projede',
-      en: 'Under Construction'
+      en: 'Under Construction',
+      ru: 'В процессе строительства'
     },
     description: {
       tr: 'Apartman yaşamının konforunu bahçe kullanım ayrıcalığıyla birleştirerek sizlere seçkin bir yaşam sunuyor. Modern mimarisi ve özel yaşam alanlarıyla öne çıkıyor.',
-      en: 'Combining the comfort of apartment living with the privilege of garden use, this project offers an exclusive lifestyle with modern architecture and private living spaces.'
+      en: 'Combining the comfort of apartment living with the privilege of garden use, this project offers an exclusive lifestyle with modern architecture and private living spaces.',
+      ru: 'Проект сочетает комфорт квартирной жизни с преимуществом использования сада, предлагая современную архитектуру и приватные жилые пространства.'
     }
   },
   {
@@ -184,15 +188,18 @@ const projects: Project[] = [
     catalogUrl: '/catalogs/besa-ritim-akcaova-2.pdf',
     units: {
       tr: '32 Daire',
-      en: '32 Apartments'
+      en: '32 Apartments',
+      ru: '32 квартиры'
     },
     completion: {
       tr: 'Projede',
-      en: 'Under Construction'
+      en: 'Under Construction',
+      ru: 'В процессе строительства'
     },
     description: {
       tr: 'Gün ışığından maksimum verim alacak şekilde tasarlanan Ritim Akçaova 2, yaşamınızın her anında konforu ve ferahlığı hissetmeniz için hayata geçirildi. Modern mimari anlayışıyla yükselen projede; 4 katlı A ve B bloklarda odalarınızı süsleyecek doğa manzarası sizleri karşılıyor.',
-      en: 'Designed to make the most of natural daylight, Ritim Akçaova 2 offers comfort and spaciousness throughout daily life. Rising with a modern architectural approach, the project welcomes residents with nature views from the rooms in its four-storey A and B blocks.'
+      en: 'Designed to make the most of natural daylight, Ritim Akçaova 2 offers comfort and spaciousness throughout daily life. Rising with a modern architectural approach, the project welcomes residents with nature views from the rooms in its four-storey A and B blocks.',
+      ru: 'Ritim Akçaova 2 спроектирован так, чтобы максимально использовать дневной свет и дарить ощущение простора и комфорта. В четырехэтажных блоках A и B вас ждут современные жилые пространства с видом на природу.'
     }
   },
   {
@@ -212,15 +219,18 @@ const projects: Project[] = [
     catalogUrl: '/catalogs/besa-residence-olea.pdf',
     units: {
       tr: '18 Daire',
-      en: '18 Apartments'
+      en: '18 Apartments',
+      ru: '18 квартир'
     },
     completion: {
       tr: 'Devam ediyor.',
-      en: 'Ongoing'
+      en: 'Ongoing',
+      ru: 'Продолжается'
     },
     description: {
       tr: 'BESA Residence Olea, çocuklar için güvenli, aileler için huzurlu, herkes için sürdürülebilir bir yaşam vaadiyle tasarlandı.',
-      en: 'BESA Residence Olea is designed to offer a safe environment for children, a peaceful lifestyle for families, and a sustainable living experience for everyone.'
+      en: 'BESA Residence Olea is designed to offer a safe environment for children, a peaceful lifestyle for families, and a sustainable living experience for everyone.',
+      ru: 'BESA Residence Olea создан для безопасной среды для детей, спокойной жизни для семей и устойчивого образа жизни для каждого.'
     }
   },
   {
@@ -237,15 +247,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '4 Villa',
-      en: '4 Villas'
+      en: '4 Villas',
+      ru: '4 виллы'
     },
     completion: {
       tr: '2024',
-      en: '2024'
+      en: '2024',
+      ru: '2024'
     },
     description: {
       tr: 'Şehrin kalbinde sofistike şehir yaşamı sunan lüks villalar.',
-      en: 'An exclusive villa project offering elegant living spaces and a refined lifestyle in a peaceful setting.'
+      en: 'An exclusive villa project offering elegant living spaces and a refined lifestyle in a peaceful setting.',
+      ru: 'Эксклюзивный проект вилл с элегантными жилыми пространствами и утонченным образом жизни в спокойной атмосфере.'
     }
   },
   {
@@ -261,15 +274,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '32 Daire',
-      en: '32 Apartments'
+      en: '32 Apartments',
+      ru: '32 квартиры'
     },
     completion: {
       tr: '2020',
-      en: '2020'
+      en: '2020',
+      ru: '2020'
     },
     description: {
       tr: 'Aile yaşamına uygun, sosyal alanlarla çevrili butik bir apartman projesi. Metroya 5 dakika, huzura bir adım.',
-      en: 'A boutique apartment project designed for comfortable family living, surrounded by social areas and located just minutes from the metro.'
+      en: 'A boutique apartment project designed for comfortable family living, surrounded by social areas and located just minutes from the metro.',
+      ru: 'Бутик-проект квартир для комфортной семейной жизни, окруженный социальными зонами и расположенный всего в нескольких минутах от метро.'
     }
   },
   {
@@ -285,15 +301,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '24 Daire',
-      en: '24 Apartments'
+      en: '24 Apartments',
+      ru: '24 квартиры'
     },
     completion: {
       tr: '2022',
-      en: '2022'
+      en: '2022',
+      ru: '2022'
     },
     description: {
       tr: 'Panoramik orman manzaralı ve premium olanaklara sahip modern konut kompleksi.',
-      en: 'A contemporary residential project offering panoramic forest views, refined architectural details, and premium living comfort.'
+      en: 'A contemporary residential project offering panoramic forest views, refined architectural details, and premium living comfort.',
+      ru: 'Современный жилой проект с панорамным видом на лес, продуманными архитектурными деталями и высоким уровнем комфорта.'
     }
   },
   {
@@ -309,15 +328,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '12 Daire',
-      en: '12 Apartments'
+      en: '12 Apartments',
+      ru: '12 квартир'
     },
     completion: {
       tr: '2023',
-      en: '2023'
+      en: '2023',
+      ru: '2023'
     },
     description: {
       tr: 'Doğa ile iç içe, müstakil hayat sunan modern yaşam alanı.',
-      en: 'A modern residential project offering an independent lifestyle in harmony with nature.'
+      en: 'A modern residential project offering an independent lifestyle in harmony with nature.',
+      ru: 'Современный жилой проект, предлагающий независимую жизнь в гармонии с природой.'
     }
   },
   {
@@ -333,15 +355,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '9 Daire',
-      en: '9 Apartments'
+      en: '9 Apartments',
+      ru: '9 квартир'
     },
     completion: {
       tr: '2024',
-      en: '2024'
+      en: '2024',
+      ru: '2024'
     },
     description: {
       tr: 'Ege esintili mimarisiyle dikkat çeken özel apartman projesi.',
-      en: 'A distinctive apartment project that stands out with its Aegean-inspired architectural character.'
+      en: 'A distinctive apartment project that stands out with its Aegean-inspired architectural character.',
+      ru: 'Особый квартирный проект, выделяющийся архитектурой с эгейским характером.'
     }
   },
   {
@@ -358,15 +383,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '2 Villa',
-      en: '2 Villas'
+      en: '2 Villas',
+      ru: '2 виллы'
     },
     completion: {
       tr: '2024',
-      en: '2024'
+      en: '2024',
+      ru: '2024'
     },
     description: {
       tr: 'Sadece iki villadan oluşan butik proje; huzur, mahremiyet ve doğayla iç içe bir hayat sunar.',
-      en: 'A boutique project consisting of only two villas, offering privacy, comfort, and a peaceful lifestyle surrounded by nature.'
+      en: 'A boutique project consisting of only two villas, offering privacy, comfort, and a peaceful lifestyle surrounded by nature.',
+      ru: 'Бутик-проект всего из двух вилл, предлагающий приватность, комфорт и спокойную жизнь среди природы.'
     }
   },
   {
@@ -381,15 +409,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: 'Tek Villa',
-      en: 'Single Villa'
+      en: 'Single Villa',
+      ru: 'Одна вилла'
     },
     completion: {
       tr: '2025',
-      en: '2025'
+      en: '2025',
+      ru: '2025'
     },
     description: {
       tr: 'Ege’nin doğal ruhunu yansıtan bu özel proje; havuzlu bir villa, zengin peyzaj düzenlemesi ve maksimum mahremiyet sunan yaşam alanlarıyla tasarlandı.',
-      en: 'Reflecting the natural spirit of the Aegean, this exclusive villa project features a private pool, rich landscaping, and living spaces designed for maximum privacy.'
+      en: 'Reflecting the natural spirit of the Aegean, this exclusive villa project features a private pool, rich landscaping, and living spaces designed for maximum privacy.',
+      ru: 'Этот эксклюзивный проект отражает природный дух Эгейского региона: вилла с бассейном, богатым ландшафтным дизайном и жилыми зонами, созданными для максимальной приватности.'
     }
   },
   {
@@ -402,15 +433,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '2 Villa',
-      en: '2 Villas'
+      en: '2 Villas',
+      ru: '2 виллы'
     },
     completion: {
       tr: 'Geliştirilmekte',
-      en: 'Under Development'
+      en: 'Under Development',
+      ru: 'В разработке'
     },
     description: {
       tr: 'BESA Villa Calista, modern mimari çizgileri ve seçkin yaşam anlayışıyla geliştirilmekte olan özel bir villa projesidir.',
-      en: 'BESA Villa Calista is an exclusive villa project under development, designed with modern architectural lines and a refined lifestyle concept.'
+      en: 'BESA Villa Calista is an exclusive villa project under development, designed with modern architectural lines and a refined lifestyle concept.',
+      ru: 'BESA Villa Calista — эксклюзивный проект вилл в разработке, созданный с современными архитектурными линиями и утонченной концепцией жизни.'
     }
   },
   {
@@ -423,15 +457,18 @@ const projects: Project[] = [
     ],
     units: {
       tr: '2 Villa',
-      en: '2 Villas'
+      en: '2 Villas',
+      ru: '2 виллы'
     },
     completion: {
       tr: 'Geliştirilmekte',
-      en: 'Under Development'
+      en: 'Under Development',
+      ru: 'В разработке'
     },
     description: {
       tr: 'BESA Nova, çağdaş mimarisi, ferah yaşam alanları ve estetik yaklaşımıyla geliştirilmekte olan butik bir villa projesidir.',
-      en: 'BESA Nova is a boutique villa project under development, featuring contemporary architecture, spacious living areas, and an elegant design approach.'
+      en: 'BESA Nova is a boutique villa project under development, featuring contemporary architecture, spacious living areas, and an elegant design approach.',
+      ru: 'BESA Nova — бутик-проект вилл в разработке, отличающийся современной архитектурой, просторными жилыми зонами и элегантным дизайнерским подходом.'
     }
   }
 ];
@@ -470,6 +507,20 @@ export const Projects: React.FC = () => {
         ongoing: 'Ongoing',
         completed: 'Completed',
         development: 'Projects Under Development'
+      }
+    },
+    ru: {
+      title: 'Наши проекты',
+      subtitle:
+        'BESA создает не просто здания, а современные жилые пространства с продуманной архитектурой и высоким уровнем комфорта.',
+      completion: 'Срок',
+      seeMore: 'Показать больше',
+      seeLess: 'Показать меньше',
+      filters: {
+        all: 'Все',
+        ongoing: 'В процессе',
+        completed: 'Завершенные',
+        development: 'Проекты в разработке'
       }
     }
   };
