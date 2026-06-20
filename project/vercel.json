@@ -1,0 +1,23 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/tr",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/tr",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ru",
+      "destination": "/index.html"
+    }
+  ]
+}
