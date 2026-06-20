@@ -84,6 +84,7 @@ const App: React.FC = () => {
       <Contact />
       <Footer />
       <ScrollToTop />
+      <Analytics />
 
       {/* Fixed Contact Buttons - Desktop */}
       <div
