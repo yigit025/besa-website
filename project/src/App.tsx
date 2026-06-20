@@ -7,6 +7,7 @@ import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Services } from './components/Services';
+import { Analytics } from '@vercel/analytics/react';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
