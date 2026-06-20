@@ -109,22 +109,22 @@ export const Contact: React.FC = () => {
             return (
               <div
                 key={index}
-                className="bg-besa-cream rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full"
+                className="bg-besa-cream rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full min-h-[245px] flex flex-col items-center justify-center text-center"
               >
-                <div className="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-5">
-                  <Icon className="w-6 h-6" />
+                <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mb-6">
+                  <Icon className="w-8 h-8" />
                 </div>
 
-                <h3 className="text-xl font-bold text-besa-dark mb-3">
+                <h3 className="text-2xl font-black text-besa-dark mb-4">
                   {item.title}
                 </h3>
 
                 {Array.isArray(item.content) ? (
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     {item.content.map((line, lineIndex) => (
                       <p
                         key={lineIndex}
-                        className="text-sm text-besa-dark/70 leading-relaxed"
+                        className="text-base font-medium text-besa-dark leading-relaxed"
                       >
                         {line}
                       </p>
@@ -133,12 +133,12 @@ export const Contact: React.FC = () => {
                 ) : item.href ? (
                   <a
                     href={item.href}
-                    className="text-sm text-besa-dark/70 hover:text-black transition font-semibold break-all"
+                    className="text-base font-semibold text-besa-dark hover:text-black transition break-all"
                   >
                     {item.content}
                   </a>
                 ) : (
-                  <p className="text-sm text-besa-dark/70 leading-relaxed">
+                  <p className="text-base font-medium text-besa-dark leading-relaxed">
                     {item.content}
                   </p>
                 )}
