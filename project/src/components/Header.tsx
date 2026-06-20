@@ -56,11 +56,11 @@ export const Header: React.FC = () => {
   return (
     <>
       <header className="bg-black shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20 gap-6">
 
             {/* LOGO */}
-            <div className="flex items-center">
+            <div className="flex items-center shrink-0">
               <div className="text-3xl font-bold text-white">
                 <span className="text-4xl sm:text-5xl font-black text-white">
                   BESA
@@ -69,8 +69,8 @@ export const Header: React.FC = () => {
             </div>
 
             {/* DESKTOP MENU */}
-            <div className="hidden lg:flex items-center space-x-6">
-              <nav className="flex space-x-6 text-sm font-bold text-white">
+            <div className="hidden lg:flex items-center">
+              <nav className="flex space-x-5 text-sm font-bold text-white">
                 <button
                   onClick={() => handleSmoothScroll('home')}
                   className="hover:text-besa-beige transition-colors"
@@ -164,20 +164,24 @@ export const Header: React.FC = () => {
             </div>
 
             {/* DESKTOP CONTACT + LANGUAGE + INSTAGRAM */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-sm text-white/80">
-                <Phone className="w-4 h-4" />
-                <span className="font-semibold">+90 533 016 98 48</span>
+            <div className="hidden lg:flex items-center space-x-4 shrink-0">
+              <div className="flex items-center space-x-2 text-sm text-white/80 whitespace-nowrap shrink-0">
+                <Phone className="w-4 h-4 shrink-0" />
+                <span className="font-semibold whitespace-nowrap">
+                  +90 533 016 98 48
+                </span>
               </div>
 
-              <div className="flex items-center space-x-2 text-sm text-white/80">
-                <Mail className="w-4 h-4" />
-                <span className="font-semibold">infobesainsaat@gmail.com</span>
+              <div className="flex items-center space-x-2 text-sm text-white/80 whitespace-nowrap shrink-0">
+                <Mail className="w-4 h-4 shrink-0" />
+                <span className="font-semibold whitespace-nowrap">
+                  infobesainsaat@gmail.com
+                </span>
               </div>
 
-              <div className="h-5 w-px bg-white/30"></div>
+              <div className="h-5 w-px bg-white/30 shrink-0"></div>
 
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 shrink-0">
                 <button
                   onClick={() => setLanguage('tr')}
                   className={`flex items-center space-x-1 text-sm font-bold text-white border border-white/40 rounded-full px-3 py-1 hover:bg-white/10 transition ${
@@ -224,7 +228,7 @@ export const Header: React.FC = () => {
                   href="https://www.instagram.com/besamimarlikinsaat/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white hover:text-black transition"
+                  className="ml-4 w-9 h-9 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white hover:text-black transition"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
