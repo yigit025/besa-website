@@ -19,17 +19,29 @@ export const Hero: React.FC = () => {
       description:
         'Discover comfortable and prestigious living spaces designed with modern architectural lines by BESA.',
       button: 'Our Projects'
+    },
+    ru: {
+      titleFirst: 'ВЫ ДОСТОЙНЫ',
+      titleSecond: 'ЛУЧШЕГО',
+      description:
+        'Откройте для себя комфортные и престижные жилые пространства BESA, созданные в современном архитектурном стиле.',
+      button: 'Наши проекты'
     }
   };
 
   const t = text[language];
 
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section
       id="home"
-      className="group relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
-      {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/videos/video.mp4"
@@ -37,44 +49,34 @@ export const Hero: React.FC = () => {
         muted
         loop
         playsInline
-      ></video>
+      />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Text Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          {t.titleFirst}
-          <br />
-          <span className="text-besa-beige">{t.titleSecond}</span>
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
+          <span className="block">
+            {t.titleFirst}
+          </span>
+
+          <span className="block">
+            {t.titleSecond}
+          </span>
         </h1>
 
-        <p className="text-xl sm:text-2xl mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+        <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
           {t.description}
         </p>
 
         <div className="flex justify-center">
           <button
-            onClick={() => {
-              const section = document.getElementById('projects');
-
-              if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={scrollToProjects}
             className="group bg-black hover:bg-neutral-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center space-x-2 shadow-lg"
           >
             <span>{t.button}</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
         </div>
       </div>
     </section>
