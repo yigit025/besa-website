@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { useTheme } from './hooks/useTheme';
 import { useLanguage } from './context/LanguageContext';
+import { SEO } from './components/SEO';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
@@ -82,6 +83,8 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO />
+
       <Header />
       <Hero />
       <Projects />
