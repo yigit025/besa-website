@@ -20,6 +20,13 @@ export const Header: React.FC = () => {
       about: 'About Us',
       services: 'Services',
       contact: 'Contact'
+    },
+    ru: {
+      home: 'Главная',
+      projects: 'Проекты',
+      about: 'О нас',
+      services: 'Услуги',
+      contact: 'Контакты'
     }
   };
 
@@ -102,8 +109,8 @@ export const Header: React.FC = () => {
             </div>
 
             {/* MOBILE RIGHT SIDE */}
-            <div className="flex items-center space-x-4 lg:hidden">
-              <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 lg:hidden">
+              <div className="flex items-center space-x-1">
                 <button
                   onClick={() => setLanguage('tr')}
                   className={`flex items-center space-x-1 text-xs font-bold text-white px-2 py-1 rounded-full border border-white/40 hover:bg-white/10 transition ${
@@ -130,6 +137,20 @@ export const Header: React.FC = () => {
                     className="w-5 h-auto rounded-sm"
                   />
                   <span>EN</span>
+                </button>
+
+                <button
+                  onClick={() => setLanguage('ru')}
+                  className={`flex items-center space-x-1 text-xs font-bold text-white px-2 py-1 rounded-full border border-white/40 hover:bg-white/10 transition ${
+                    language === 'ru' ? 'bg-white/20' : ''
+                  }`}
+                >
+                  <img
+                    src="https://flagcdn.com/w20/ru.png"
+                    alt="Русский"
+                    className="w-5 h-auto rounded-sm"
+                  />
+                  <span>RU</span>
                 </button>
               </div>
 
@@ -183,6 +204,20 @@ export const Header: React.FC = () => {
                     className="w-5 h-auto rounded-sm"
                   />
                   <span>EN</span>
+                </button>
+
+                <button
+                  onClick={() => setLanguage('ru')}
+                  className={`flex items-center space-x-1 text-sm font-bold text-white border border-white/40 rounded-full px-3 py-1 hover:bg-white/10 transition ${
+                    language === 'ru' ? 'bg-white/20' : ''
+                  }`}
+                >
+                  <img
+                    src="https://flagcdn.com/w20/ru.png"
+                    alt="Русский"
+                    className="w-5 h-auto rounded-sm"
+                  />
+                  <span>RU</span>
                 </button>
               </div>
             </div>
