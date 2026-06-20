@@ -102,46 +102,48 @@ export const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
           {contactItems.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={index}
-                className="bg-besa-cream rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full min-h-[245px] flex flex-col items-center justify-center text-center"
+                className="bg-besa-cream rounded-2xl px-6 pt-8 pb-7 shadow-md hover:shadow-xl transition-all duration-300 h-full min-h-[285px] flex flex-col items-center text-center"
               >
-                <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mb-7 shrink-0">
                   <Icon className="w-8 h-8" />
                 </div>
 
-                <h3 className="text-2xl font-black text-besa-dark mb-4">
+                <h3 className="text-2xl font-black text-besa-dark mb-5 min-h-[32px] flex items-center justify-center">
                   {item.title}
                 </h3>
 
-                {Array.isArray(item.content) ? (
-                  <div className="space-y-2">
-                    {item.content.map((line, lineIndex) => (
-                      <p
-                        key={lineIndex}
-                        className="text-base font-medium text-besa-dark leading-relaxed"
-                      >
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                ) : item.href ? (
-                  <a
-                    href={item.href}
-                    className="text-base font-semibold text-besa-dark hover:text-black transition break-all"
-                  >
-                    {item.content}
-                  </a>
-                ) : (
-                  <p className="text-base font-medium text-besa-dark leading-relaxed">
-                    {item.content}
-                  </p>
-                )}
+                <div className="flex-1 flex items-start justify-center w-full">
+                  {Array.isArray(item.content) ? (
+                    <div className="space-y-2">
+                      {item.content.map((line, lineIndex) => (
+                        <p
+                          key={lineIndex}
+                          className="text-base font-medium text-besa-dark leading-relaxed"
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                  ) : item.href ? (
+                    <a
+                      href={item.href}
+                      className="text-base font-semibold text-besa-dark hover:text-black transition break-all"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <p className="text-base font-medium text-besa-dark leading-relaxed">
+                      {item.content}
+                    </p>
+                  )}
+                </div>
               </div>
             );
           })}
