@@ -8,43 +8,42 @@ export const Footer: React.FC = () => {
   const text = {
     tr: {
       description:
-        'Her ayrıntısı özenle düşünülmüş, zamansız bir yaşam deneyimi sunan projeler geliştiriyoruz. BESA İnşaat, lüks ve konforu bir araya getirerek sizi sadece bir eve değil, hayalini kurduğunuz yaşama davet ediyor.',
-      quickLinks: 'Hızlı Bağlantılar',
-      services: 'Hizmetler',
+        'BESA Mimarlık İnşaat, modern mimari anlayışı ve kaliteli yaşam alanlarıyla geleceğe değer katan projeler geliştirir.',
+      quickLinks: 'Hızlı Erişim',
+      contact: 'İletişim',
+      social: 'Sosyal Medya',
       home: 'Ana Sayfa',
       projects: 'Projeler',
       about: 'Hakkımızda',
-      servicesMenu: 'Hizmetler',
-      contact: 'İletişim',
-      construction: 'Yapı ve İnşaat',
-      design: 'Proje Tasarımı',
-      renovation: 'Uygulama & Tadilat',
-      afterDelivery: 'Teslim Sonrası Hizmet',
-      commitment: 'Taahhüt',
-      copyright: '© 2025 BESA İnşaat. Tüm hakları saklıdır.',
-      privacy: 'Gizlilik Politikası',
-      terms: 'Hizmet Şartları',
-      cookies: 'Çerez Politikası'
+      services: 'Hizmetler',
+      contactLink: 'İletişim',
+      rights: 'Tüm hakları saklıdır.'
     },
     en: {
       description:
-        'We develop projects that offer a timeless living experience, thoughtfully designed in every detail. BESA Construction brings luxury and comfort together, inviting you not only to a home but to the life you dream of.',
+        'BESA Mimarlık İnşaat develops projects that add value to the future with modern architectural vision and high-quality living spaces.',
       quickLinks: 'Quick Links',
-      services: 'Services',
+      contact: 'Contact',
+      social: 'Social Media',
       home: 'Home',
       projects: 'Projects',
       about: 'About Us',
-      servicesMenu: 'Services',
-      contact: 'Contact',
-      construction: 'Construction & Building',
-      design: 'Project Design',
-      renovation: 'Implementation & Renovation',
-      afterDelivery: 'After-Delivery Support',
-      commitment: 'Contracting',
-      copyright: '© 2025 BESA Construction. All rights reserved.',
-      privacy: 'Privacy Policy',
-      terms: 'Terms of Service',
-      cookies: 'Cookie Policy'
+      services: 'Services',
+      contactLink: 'Contact',
+      rights: 'All rights reserved.'
+    },
+    ru: {
+      description:
+        'BESA Mimarlık İnşaat разрабатывает проекты, которые создают ценность для будущего благодаря современному архитектурному подходу и качественным жилым пространствам.',
+      quickLinks: 'Быстрые ссылки',
+      contact: 'Контакты',
+      social: 'Социальные сети',
+      home: 'Главная',
+      projects: 'Проекты',
+      about: 'О нас',
+      services: 'Услуги',
+      contactLink: 'Контакты',
+      rights: 'Все права защищены.'
     }
   };
 
@@ -69,21 +68,100 @@ export const Footer: React.FC = () => {
     <footer className="bg-black text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
-          <div>
-            <h3 className="text-4xl font-black mb-8 text-white">
-              BESA
-            </h3>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-            <p className="text-white/80 leading-relaxed text-lg mb-8 max-w-md">
+          <div className="md:col-span-1">
+            <div className="text-4xl font-black text-white mb-5">
+              BESA
+            </div>
+
+            <p className="text-white/70 leading-relaxed">
               {t.description}
             </p>
+          </div>
 
-            <div className="flex items-center space-x-4">
+          <div>
+            <h3 className="text-lg font-bold text-white mb-5">
+              {t.quickLinks}
+            </h3>
+
+            <div className="flex flex-col space-y-3">
+              <button
+                onClick={() => handleSmoothScroll('home')}
+                className="text-left text-white/70 hover:text-white transition"
+              >
+                {t.home}
+              </button>
+
+              <button
+                onClick={() => handleSmoothScroll('projects')}
+                className="text-left text-white/70 hover:text-white transition"
+              >
+                {t.projects}
+              </button>
+
+              <button
+                onClick={() => handleSmoothScroll('about')}
+                className="text-left text-white/70 hover:text-white transition"
+              >
+                {t.about}
+              </button>
+
+              <button
+                onClick={() => handleSmoothScroll('services')}
+                className="text-left text-white/70 hover:text-white transition"
+              >
+                {t.services}
+              </button>
+
+              <button
+                onClick={() => handleSmoothScroll('contact')}
+                className="text-left text-white/70 hover:text-white transition"
+              >
+                {t.contactLink}
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-white mb-5">
+              {t.contact}
+            </h3>
+
+            <div className="space-y-3 text-white/70">
+              <a
+                href="tel:+905330169848"
+                className="block hover:text-white transition"
+              >
+                +90 533 016 98 48
+              </a>
+
+              <a
+                href="mailto:infobesainsaat@gmail.com"
+                className="block hover:text-white transition break-all"
+              >
+                infobesainsaat@gmail.com
+              </a>
+
+              <p>
+                Atatürk Mahallesi, Ertuğrul Gazi Sokağı
+              </p>
+
+              <p>
+                Metropol İstanbul Sitesi, Ataşehir/İstanbul
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-white mb-5">
+              {t.social}
+            </h3>
+
+            <div className="flex items-center gap-3">
               <button
                 onClick={handleScrollToTop}
-                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
+                className="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -91,7 +169,7 @@ export const Footer: React.FC = () => {
 
               <button
                 onClick={handleScrollToTop}
-                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
+                className="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
@@ -101,7 +179,7 @@ export const Footer: React.FC = () => {
                 href="https://www.instagram.com/besamimarlikinsaat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
+                className="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -109,7 +187,7 @@ export const Footer: React.FC = () => {
 
               <button
                 onClick={handleScrollToTop}
-                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
+                className="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -117,111 +195,19 @@ export const Footer: React.FC = () => {
 
               <button
                 onClick={handleScrollToTop}
-                className="w-12 h-12 bg-white/10 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
+                className="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
               </button>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-2xl font-bold mb-8 text-white">
-              {t.quickLinks}
-            </h4>
-
-            <ul className="space-y-4 text-lg">
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('home')}
-                  className="text-white/80 hover:text-white transition"
-                >
-                  {t.home}
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('projects')}
-                  className="text-white/80 hover:text-white transition"
-                >
-                  {t.projects}
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('about')}
-                  className="text-white/80 hover:text-white transition"
-                >
-                  {t.about}
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('services')}
-                  className="text-white/80 hover:text-white transition"
-                >
-                  {t.servicesMenu}
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('contact')}
-                  className="text-white/80 hover:text-white transition"
-                >
-                  {t.contact}
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-2xl font-bold mb-8 text-white">
-              {t.services}
-            </h4>
-
-            <ul className="space-y-4 text-lg text-white/80">
-              <li>{t.construction}</li>
-              <li>{t.design}</li>
-              <li>{t.renovation}</li>
-              <li>{t.afterDelivery}</li>
-              <li>{t.commitment}</li>
-            </ul>
-          </div>
         </div>
 
-        <div className="border-t border-white/20 mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/70">
-            {t.copyright}
+        <div className="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
+          <p>
+            © {new Date().getFullYear()} BESA Mimarlık İnşaat. {t.rights}
           </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-6 text-white/70">
-            <button
-              onClick={handleScrollToTop}
-              className="hover:text-white transition"
-            >
-              {t.privacy}
-            </button>
-
-            <button
-              onClick={handleScrollToTop}
-              className="hover:text-white transition"
-            >
-              {t.terms}
-            </button>
-
-            <button
-              onClick={handleScrollToTop}
-              className="hover:text-white transition"
-            >
-              {t.cookies}
-            </button>
-          </div>
         </div>
       </div>
     </footer>
