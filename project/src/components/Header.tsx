@@ -163,7 +163,7 @@ export const Header: React.FC = () => {
               </button>
             </div>
 
-            {/* DESKTOP CONTACT + LANGUAGE */}
+            {/* DESKTOP CONTACT + LANGUAGE + INSTAGRAM */}
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-sm text-white/80">
                 <Phone className="w-4 h-4" />
@@ -219,6 +219,16 @@ export const Header: React.FC = () => {
                   />
                   <span>RU</span>
                 </button>
+
+                <a
+                  href="https://www.instagram.com/besamimarlikinsaat/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white hover:text-black transition"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </div>
